@@ -1,0 +1,109 @@
+.special-proposition {
+    &__title {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        color: $fontDark;
+        padding-top: 80px;
+        padding-bottom: 32px;
+    }
+    &__wrapper {
+        display: flex;
+        margin-bottom: 80px;
+    }
+    &__first {
+        width: 640px;
+        height: 352px;
+        margin-right: 32px;
+        position: relative;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 32px;
+            left: 32px;
+            padding-right: 320px;
+        }
+        &-title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+            color: $fontWhite;
+            letter-spacing: 0.02em;
+            padding-bottom: 2px;
+        }
+        &-text {
+            font-size: 14px;
+            line-height: 24px;
+            color: $fontWhite;
+            letter-spacing: 0.02em;
+        }
+        &-link {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: $fontBlue;
+            padding-top: 14px;
+            &:hover {
+                color: $fontBlue;
+            }
+            &:visited {
+                color: $fontBlue;
+            }
+            &:active {
+                color: $fontBlue;
+            }
+        }
+    }
+    &__second {
+        width: 640px;
+        height: 352px;
+        margin-right: 32px;
+        position: relative;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 32px;
+            left: 32px;
+            padding-right: 320px;
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+            color: $fontWhite;
+            letter-spacing: 0.02em;
+            padding-bottom: 2px;
+        }
+        &-text {
+            font-size: 14px;
+            line-height: 24px;
+            color: $fontWhite;
+            letter-spacing: 0.02em;
+        }
+        &-link {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: $fontBlue;
+            padding-top: 14px;
+            &:hover {
+                color: $fontBlue;
+            }
+            &:visited {
+                color: $fontBlue;
+            }
+            &:active {
+                color: $fontBlue;
+            }
+        }
+    }
+}

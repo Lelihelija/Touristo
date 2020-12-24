@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "ASAA,OAAO,CAAC,oFAAI;ADAZ,AAAA,CAAC;AACD,CAAC,AAAA,QAAQ;AACT,CAAC,AAAA,OAAO,CAAC;EACR,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CACtB;;AACD,AAAA,CAAC,CAAC;EACD,eAAe,EAAE,IAAI;CACrB;;AACD,AAAA,EAAE;AACF,EAAE;AACF,EAAE,CAAC;EACF,UAAU,EAAE,IAAI;CAChB;;AACD,AAAA,GAAG,CAAC;EACH,cAAc,EAAE,GAAG;CACnB;;AACD,AAAA,EAAE;AACF,EAAE;AACF,EAAE;AACF,EAAE;AACF,EAAE;AACF,EAAE,CAAC;EACF,WAAW,EAAE,OAAO;EACpB,SAAS,EAAE,OAAO;CAClB;;ARjBD,AAAA,IAAI,CAAC;EACD,WAAW,EOXR,QAAQ,EAAE,UAAU;CPY1B;;AAED,AAAA,UAAU,CAAC;EACP,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;CACd;;AAED,AAAA,QAAQ,CAAC;EACL,OAAO,EAAE,QAAQ;CACpB",
+    "sources": [
+        "../src/App.scss",
+        "../src/components/Header/_header.scss",
+        "../src/components/Footer/_footer.scss",
+        "../src/components/MailingSection/_mailingSection.scss",
+        "../src/components/ReviewsSection/_reviewsSection.scss",
+        "../src/components/SpecialPropositionsSection/_specialPropositionsSection.scss",
+        "../src/components/ToursSalesSection/_toursSalesSection.scss",
+        "../src/scss/variables.scss",
+        "../src/scss/null.scss",
+        "../src/scss/fonts.scss"
+    ],
+    "names": [],
+    "file": "App.css"
+}

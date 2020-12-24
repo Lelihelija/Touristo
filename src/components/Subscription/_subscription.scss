@@ -1,0 +1,110 @@
+.subscription {
+    background-color: #22C3CA;
+    &__inner {
+        margin-top: 98px;
+        padding-bottom: 50px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        padding-top: 38px;
+        padding-bottom: 24px;
+        color: $fontWhite;
+    }
+    &__subscription-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        label {
+            color: $fontWhite;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    &__email {
+        &-wrapper {
+            display: flex;
+            cursor: pointer;
+            margin-top: 18px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            width: 752px;
+            height: 72px;
+        }
+        img {
+            margin-left: 24px;
+            margin-right: 11px;
+        }
+        input {
+            color: $fontDark;
+            flex-grow: 1;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        button {
+            flex-shrink: 0;
+            margin-right: 34px;
+            background: transparent;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $fontBlue;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            outline:none;
+        }
+    }
+    &__sms {
+        &-wrapper {
+            display: flex;
+            cursor: pointer;
+            margin-top: 18px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            height: 72px;
+            width: 416px;
+        }
+        img {
+            margin-left: 24px;
+            margin-right: 11px;
+        }
+        input {
+            color: $fontDark;
+            flex-grow: 1;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        button {
+            flex-shrink: 0;
+            margin-right: 34px;
+            background: transparent;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $fontBlue;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            outline:none;
+        }
+    }
+    &__info {
+        color: $fontWhite;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+    }
+}

@@ -1,0 +1,25 @@
+/* The following block can be included in a custom.scss */
+
+/* make the customizations */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1364px,
+) ;
+/* ширина контейнера + гаттер відтс + 20пкс */
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1344px, 
+) ;
+
+/* ширина контейнера + гаттер відтс */
+
+$grid-gutter-width:           32px;
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";

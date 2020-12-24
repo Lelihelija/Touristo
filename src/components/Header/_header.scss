@@ -1,0 +1,167 @@
+.header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+    .myContainer {
+        max-width: 1372px;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 95px;
+        background: #fff;
+        justify-content: space-between;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px; 
+    }
+    &__rectangle {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 208px;
+        height: 100%;
+        background: #22C3CA;
+        color: $fontWhite;
+        font-size: 24px;
+        font-weight: 500;
+        border-bottom-left-radius: 8px;
+    }
+    &__navbar {
+        margin-left: 32px;
+        // margin-top: 8px;
+        flex-grow: 1;
+
+        .top { 
+            padding-top: 10px;       
+            &-menu {
+                display: flex;
+                align-self: flex-start;
+            }
+            & li {
+                margin-right: 36px;
+        
+                & a {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 16px;
+                    letter-spacing: 0.02em;
+                    color: $fontGreyNav;
+                    &::before {
+                        color: $fontGreyNav;
+                    }
+                }
+            }
+        }
+        .bottom {
+            margin-top: -8px;
+            &-menu {
+                display: flex;
+                // flex-wrap: nowrap;
+                align-items: flex-start;
+            }
+            & li {
+                margin-right: 39px;
+        
+                & a {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: $fontBlue;
+                    line-height: 16px;
+                    letter-spacing: 0.8px;
+                    letter-spacing: 0.09em;
+                    text-transform: uppercase;
+                    &::before {
+                        color: $fontBlue;
+                    }
+                }
+            }
+        }
+    }
+    &__callback {
+        display: flex;
+        border-left: 1px  #F7F5F5 solid;
+        border-right: 1px  #F7F5F5 solid;
+        margin-top: 12px;
+        margin-bottom: 15px;
+        // justify-content: center;
+        align-items: center;
+        width: 223px;
+        &-icon {
+            margin-left: 10px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+        &-label {
+            margin-top: 6px;
+            margin-left: 8px;
+            cursor: pointer;
+            display: flex;
+            color: $fontBlue;
+            font-size: 12px;
+            line-height: 16px;
+            flex-direction: column;
+            letter-spacing: 0.02em;
+            & a {
+                letter-spacing: -0.02em;
+                color: $fontBlack;                
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 16px;
+            }
+        }
+    }
+    &__searchBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 14px 24px 12px;
+
+        & button {
+            cursor: pointer;
+            width: 192px;
+            height: 56px;
+            background: #22C3CA;
+            border-radius: 100px;
+            color: $fontWhite;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+
+
+// --------------------------
+// .header {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//      padding-left: 10px;
+//      padding-right: 10px;
+
+//     background-color: rgba(161, 250, 166, 0.5);
+
+//     &__inner {
+//         background-color: rgba(248, 126, 126, 0.5);
+
+//         height: 150px;
+//     }
+
+//     .container {
+//         max-width: 1200px;
+//     }
+
+//     & + &_next-block {
+//         margin-top: 150px;
+//     }
+// }
