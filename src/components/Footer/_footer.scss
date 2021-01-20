@@ -1,140 +1,141 @@
 .footer {
     background: #FFFFFF;
+
+    .container {
+
+        @media (max-width: $screen-sm-max) {
+        padding-right: 22px;
+        padding-left: 22px;
+        }
+    }
+
     &__inner {
         padding-bottom: 104px;
-        margin-bottom: 40px;
+        margin-top: 96px;
+
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 0px;
+        }
     }
-    &__contacts {
-        margin-top: 170px;
-        &-mail {
-            margin-bottom: 19px;
-            &-img {
-                width: 16px;
-                height: 18px;
-                margin-right: 10px;
-            }
-            &-link {
-                letter-spacing: 0.002em;
-                // vertical-align: baseline;
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 26px;
+
+    &__info {
+        margin-bottom: 19px;
+        position: relative;
+        padding-left: 24px;
+
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: 16px;
+        }
+
+        &-wrapper {
+            margin-top: 72px;
+        }
+
+        &-icon-wrapper {
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            display: flex;
+            width: 20px;
+            top: 2px;
+            left: 0;
+        }
+
+        .icon {
+            font-size: 18px;
+            display: block;
+        }
+
+        a {
+            line-height: 24px;
+            color: $fontDark;
+            font-weight: 500;
+            font-size: 16px;
+
+            &:hover {
                 text-decoration: underline;
                 color: $fontBlue;
-                &:hover {
-                    color: $fontBlue;
-                }
-                &:visited {
-                    color: $fontBlue;
-                }
-                &:active {
-                    color: $fontBlue;
-                }
+            }
+            &:active {
+                color: $fontBlue;
             }
         }
-        &-phone {
-            margin-bottom: 20px;
-            display: flex;
-            &-img {
-                margin-right: 10px;
-                width: 12px;
-                height: 18px;
+    }
+
+    &__social-icons {
+        margin-top: 44px;
+        display: flex;
+
+        @media (max-width: $screen-sm-max) {
+            margin-top: 40px;
+            margin-left: 2px;
+            margin-bottom: 39px;
+        }
+
+        .icon {
+            margin-right: 40px;
+            color: $fontBlue;
+            font-size: 40px;
+            cursor: pointer;
+
+            @media (max-width: $screen-sm-max) {
+                margin-right: 56px;
             }
-            &-wrapper {
-                display: flex;
-                flex-direction: column;
+        }
+    }
+
+    &__menu {
+        &-title {
+            border-bottom: 2px solid #F7F5F5;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            line-height: 16px;
+            font-weight: 500;
+            color: $fontBlue;
+            font-size: 12px;
+
+            @media (max-width: $screen-sm-max) {
+                letter-spacing: 1.1px;
             }
-            &-link {
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 22px;
+        }
+
+        &-wrapper {
+            flex-direction: column;
+            display:flex;
+            width: 192px;
+
+            @media (max-width: $screen-sm-max) {
+                margin-bottom: 40px;
+            }
+
+            li:not(:last-child) {
+                margin-bottom: 9px;
+            }
+
+        }
+
+        &-item {
+            font-weight: normal;
+            font-weight: normal;
+            line-height: 24px;
+            color: $fontDark;
+            font-size: 14px;
+
+            @media (max-width: $screen-sm-max) {
+                letter-spacing: 0.4px;
+            }
+
+            &:hover {
                 color: $fontDark;
-                &:hover {
-                    color: $fontDark;
-                }
-                &:visited {
-                    color: $fontDark;
-                }
-                &:active {
-                    color: $fontDark;
-                }
             }
-        }
-        &-adress {
-            margin-bottom: 20px;
-            display: flex;
-
-            &-img {
-                margin-right: 10px;
-                width: 16px;
-                height: 19px;
-            }
-            &-wrapper {
-                display: flex;
-                flex-direction: column;
-            }
-            &-link {
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 22px;
+            &:visited {
                 color: $fontDark;
-                &:hover {
-                    color: $fontDark;
-                }
-                &:visited {
-                    color: $fontDark;
-                }
-                &:active {
-                    color: $fontDark;
-                }
+            }
+            &:active {
+                color: $fontDark;
             }
         }
-        &-icons {
-            display: flex;
-            margin-top: 46px;
-            img {
-                cursor: pointer;
-                margin-right: 40px;
-            }
-        }
-    }
-    &__lists-wrapper {
-        display:flex;
-        flex-direction: column;
-        width: 192px;
-        
-        li:not(:last-child) {
-            margin-bottom: 9px;
-        }
-    }
-}
-
-.title {
-    margin-top: 96px;
-    margin-bottom: 8px;
-    padding-bottom: 6px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: $fontBlue;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #F7F5F5;;
-}
-
-.item {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: normal;
-    color: $fontDark;
-    &:hover {
-        color: $fontDark;
-    }
-    &:visited {
-        color: $fontDark;
-    }
-    &:active {
-        color: $fontDark;
     }
 }

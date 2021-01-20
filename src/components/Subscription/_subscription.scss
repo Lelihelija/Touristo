@@ -1,110 +1,167 @@
 .subscription {
     background-color: #22C3CA;
+    margin-top: 80px;
+
+    @media (max-width: $screen-sm-max) {
+        margin-top: 128px;
+    }
+
     &__inner {
-        margin-top: 98px;
         padding-bottom: 50px;
+        padding-top: 10px;
+
+        @media (max-width: $screen-sm-max) {
+            padding-top: 2px;
+            padding-bottom: 36px;
+        }
     }
-    &__title {
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 48px;
-        padding-top: 38px;
-        padding-bottom: 24px;
-        color: $fontWhite;
-    }
-    &__subscription-wrapper {
-        display: flex;
+
+    .row {
         justify-content: space-between;
         margin-bottom: 4px;
-        label {
-            color: $fontWhite;
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 32px;
-        }
+        display: flex;
     }
-    &__email {
-        &-wrapper {
-            display: flex;
-            cursor: pointer;
-            margin-top: 18px;
-            background: #FFFFFF;
-            border-radius: 8px;
-            width: 752px;
-            height: 72px;
-        }
-        img {
-            margin-left: 24px;
-            margin-right: 11px;
-        }
-        input {
-            color: $fontDark;
-            flex-grow: 1;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
 
-            &:focus {
-                outline: none;
-            }
-        }
-        button {
-            flex-shrink: 0;
-            margin-right: 34px;
-            background: transparent;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 16px;
-            color: $fontBlue;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            cursor: pointer;
-            outline:none;
-        }
-    }
-    &__sms {
-        &-wrapper {
-            display: flex;
-            cursor: pointer;
-            margin-top: 18px;
-            background: #FFFFFF;
-            border-radius: 8px;
-            height: 72px;
-            width: 416px;
-        }
-        img {
-            margin-left: 24px;
-            margin-right: 11px;
-        }
-        input {
-            color: $fontDark;
-            flex-grow: 1;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
-
-            &:focus {
-                outline: none;
-            }
-        }
-        button {
-            flex-shrink: 0;
-            margin-right: 34px;
-            background: transparent;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 16px;
-            color: $fontBlue;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            cursor: pointer;
-            outline:none;
-        }
-    }
-    &__info {
+    &__title {
+        padding-bottom: 22px;
+        font-weight: bold;
+        line-height: 48px;
+        padding-top: 29px;
         color: $fontWhite;
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 32px;
+
+        @media (max-width: $screen-sm-max) {
+            line-height: 32px;
+            font-size: 24px;
+        }
+    }
+
+    form {
+        position: relative;
+
+        .button_white {
+            margin-top: 21px;
+            padding-right: 47px;
+            padding-left: 47px;
+
+            &:hover {
+                box-shadow: 0px 0px 20px 15px rgba(248, 248, 248, 0.4);
+            }
+
+            @media (max-width: $screen-sm-max) {
+                margin-top: 22px;
+            }
+        }
+    }
+
+    label {
+        color: $fontWhite;
+        line-height: 32px;
+        font-weight: 500;
+        font-size: 24px;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+            font-size: 20px;
+            line-height: 18px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+
+        &-choise {
+            justify-content: space-between;
+            padding-right: 57px;
+            display: flex;
+
+            &-option {
+                @media (max-width: $screen-xl-min) {
+                    padding-bottom: 3px;
+                    border-bottom: dotted 2px transparent;
+                }
+                &:hover {
+                    border-bottom-color: $fontWhite;
+                }
+            }
+        }
+
+        &-wrapper {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            margin-top: 16px;
+            cursor: pointer;
+            display: flex;
+            height: 72px;
+            width: 100%;
+
+            @media (max-width: $screen-sm-max) {
+                margin-top: 20px;
+                height: 56px;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+
+        .icon {
+            margin: auto 11px auto 26px;
+            color: $fontDark;
+        }
+
+        input {
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+            line-height: 24px;
+            color: $fontDark;
+            font-weight: 500;
+            font-size: 16px;
+            flex-grow: 1;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &__submit {
+        background-color: transparent;
+        text-transform: uppercase;
+        outline:none !important;
+        letter-spacing: 0.8px;
+        position: absolute;
+        line-height: 16px;
+        font-weight: 500;
+        color: $fontBlue;
+        font-size: 12px;
+        cursor: pointer;
+        flex-shrink: 0;
+        bottom: 37px;
+        right: 34px;
+
+        @media (max-width: $screen-lg-max) {
+            bottom: 60px;
+        }
+
+        @media (max-width: $screen-sm-max) {
+            position: initial;
+            color: $fontWhite;
+            display: block;
+        }
+    }
+
+    &__info {
         letter-spacing: 0.01em;
+        color: $fontWhite;
+        line-height: 24px;
+        font-size: 14px;
+
+        @media (max-width: $screen-lg-max) {
+            line-height: 20px;
+            margin-top: 7px;
+            font-size: 12px;
+            display: block;
+        }
     }
 }

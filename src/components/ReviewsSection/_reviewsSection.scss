@@ -1,78 +1,177 @@
 .reviews {
     &__inner {
-        margin-bottom: 80px;
-    }
-    &__title {
-        font-weight: bold;
-        font-size: 32px;
-        line-height: 48px;
-        color: $fontDark;
-        letter-spacing: 0.02em;
-    }
-    &__wrapper {
-        margin-top: 16px;
-        display: flex;
-        width: 460px;
-        height: 328px;
-        justify-content: center;
-        background: #FBFBFB;
+        margin-bottom: 74px;
 
+        @media (max-width: $screen-sm-max) {
+            padding-top: 25px;
+        }
+
+        .row {
+            display: block;
+    
+            .slick-dots {
+                @media (max-width: $screen-sm-max) {
+                    bottom: -32px;
+                }
+                
+                li {
+                    margin-right: 2px;
+                    margin-left: 2px;
+    
+                    &.slick-active {
+                        button {
+                            &::before {
+                                background-color: $java;
+                            }
+                        }
+                    }
+    
+                    button {
+                        &::before {
+                            transition: background-color $transition;
+                            border: 1px solid $java;
+                            border-radius: 50%;
+                            color: transparent;
+                            height: 8px;
+                            content: '';
+                            margin:auto;
+                            width: 8px;
+                            opacity: 1;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        letter-spacing: 0.02em;
+        margin-bottom: 26px;
+        line-height: 48px;
+        font-weight: bold;
+        color: $fontDark;
+        font-size: 32px;
+
+        @media (max-width: $screen-sm-max) {
+            margin-bottom: 17px;
+            line-height: 32px;
+            font-size: 24px;
+        }
+    }
+
+    &__wrapper {
+        justify-content: center;
+        background-color: #FBFBFB;
+        padding-right: 16px;
+        padding-left: 16px;
+        overflow: hidden;
+        display: flex;
+        width: 416px;
     }
     &__card {
-        align-self: center;
-        width: 416px;
-        height: 328px;
-        background: #FFFFFF; 
-        padding-top: 32px;
-        padding-left: 32px;
-        padding-right: 16px;
         border: 1px solid #F6F6F6;
+        background-color: #FFFFFF;
+        padding-bottom: 30px;
+        padding-right: 16px;
+        padding-left: 32px;
+        align-self: center;
+        padding-top: 30px;
+        min-height: 328px;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 8px;
+            padding-top: 23px;
+        }
     }
     &__name {
+        padding-bottom: 16px;
+        line-height: 24px;
+        color: $fontDark;
         font-weight: 500;
         font-size: 16px;
-        line-height: 24px;
-        color: $fontDark;
-        padding-bottom: 16px;
+
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 7px;
+        }
     }
+
     &__text {
-        font-size: 14px;
+        letter-spacing: 0.02em;
         line-height: 24px;
         color: $fontDark;
-        letter-spacing: 0.02em;
+        font-size: 14px;
+
+        @media (max-width: $screen-sm-max) {
+            line-height: 20px;
+            font-size: 12px;
+        }
     }
 }
 
-// .slick-prev {
-//     color: #22C3CA;
-//     background: #FFFFFF;
-//     width: 48px;
-//     height: 48px;
-//     z-index: 5;
-//     &::before {
-//         display: none;
-//       }
-// }
-// .slick-next {
-//     color: #22C3CA;
-//     background: #FFFFFF;
-//     width: 48px;
-//     height: 48px;
-//     z-index: 5;
-// }
+.slick-slider {
+    position: relative;
 
-// .slick-prev:before {
-//     color: #22C3CA;
-//     background: #FFFFFF;
-//     width: 48px;
-//     height: 48px;
-//     z-index: 5;
-// }
+    .slick-prev,
+    .slick-next{
+        background-color: #22C3CA;
+        color: transparent;
+        position: absolute;
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+        z-index: 5;
 
-// .slick-next:before {
-//     color: #22C3CA;
-//     background: #FFFFFF;
-//     width: 48px;
-//     height: 48px;
-//     z-index: 5;
-// }
+        &:hover,
+        &:focus {
+            outline:none;
+        }
+
+        &:before,
+        &:after {
+            background-color: #fff;
+            border-radius: 2px;
+            position: absolute;
+            display: block;
+            margin: auto;
+            content: '';
+            height: 4px;
+            width: 18px;
+            opacity: 1;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            
+        }
+        &:before {
+            top: -10.5px;
+        }
+        &:after {
+            top: 10.5px;
+        }
+    }
+    .slick-next {
+        right: -9px;
+
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    .slick-prev {
+        left: -9px;
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+        &:after {
+            transform: rotate(45deg);
+        }
+    }
+}

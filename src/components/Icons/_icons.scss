@@ -1,0 +1,24 @@
+.icon {
+    display: inline-block;
+    color: currentColor;
+    height: 1em;
+    width: 1em;
+}
+/*
+    Для задання ширини іконки ділимо ширину на висоту
+    і задаємо це значення у розмірності em (кому поправити на крапку).
+
+    .. або задати формулою
+*/
+.icon-mobile {
+    // width: 0.6666666666666667em;
+    width: (16em/24);
+}
+
+.icon-location {
+    width: (16em/19);
+}
+
+.icon-mail {
+    width: (21em/24);
+}

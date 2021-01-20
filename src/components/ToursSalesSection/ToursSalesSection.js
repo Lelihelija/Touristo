@@ -1,228 +1,306 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import Slider from 'react-slick';
+
+//components
 import OneSection from './OneSection';
-import calendar from '../../img/calendar.svg';
-import compare from '../../img/compare.svg';
-import visa from '../../img/visa.svg';
-import plane from '../../img/plane.svg';
-import bus from '../../img/bus.svg';
-import star from '../../img/star.svg';
-import starEmpty from '../../img/starEmpty.svg';
+
+//imgs or icons
+import plane from '../../img/plane.png';
+import bus from '../../img/bus.png';
 import tourCover1 from '../../img/tourCover1.png';
 import tourCover2 from '../../img/tourCover2.png';
-// import tourCover3 from '../../img/tourCover3.png';
-// import tourCover4 from '../../img/tourCover4.png';
-// import tourCover5 from '../../img/tourCover5.png';
-// import tourCover6 from '../../img/tourCover6.png';
-// import tourCover7 from '../../img/tourCover7.png';
-// import tourCover8 from '../../img/tourCover8.png';
+import tourCover3 from '../../img/tourCover3.png';
+import tourCover4 from '../../img/tourCover4.png';
+import tourCover5 from '../../img/tourCover5.png';
+import tourCover6 from '../../img/tourCover6.png';
+import tourCover7 from '../../img/tourCover7.png';
+import tourCover8 from '../../img/tourCover8.png';
 
 class ToursSales extends Component  {
-    state = {
-        tours : [
-            {
-                coverImg: tourCover1,
-                id: 103980,
-                title: 'Sunrise Marina Port Ghalib 5*',
-                destination: 'Єгипет, Шарм Ель Шейк',
-                calendarImg: calendar,
-                dates: '16-26 листопада (20 ночей)',
-                visaImg: visa,
-                needVisa: 'Без візи',
-                starImg: star,
-                transportImg: plane,
-                transportText: 'Виліт зі Львова',
-                mealsType: 'Ultra All-Inclusive',
-                priceUah: '2 649',
-                priceEur: 89,
-                compareImg: compare,
-            },
-            {
-                coverImg: tourCover2,
-                id: 103980,
-                title: 'Вихідні в Празі',
-                destination: 'Чехія, Прага / Угорщина, Будапешт',
-                calendarImg: calendar,
-                dates: '09-12 лютого (3 ночі)',
-                visaImg: visa,
-                needVisa: 'Без візи',
-                starImg: starEmpty,
-                transportImg: bus,
-                transportText: 'Виїзд з Києва',
-                mealsType: 'Сніданки',
-                priceUah: '1 235',
-                priceEur: 45,
-                compareImg: compare,
-            },
-        ],
-        filter : [
-            'Всі країни',
-            'Екскурсійні тури',
-            'Єгипет',
-            'ОАЕ',
-            'Шрі Ланка',
-            'Домінікана',
-            'Тайланд',
-            'Греція',
-            'Мальдіви',
-            'Куба',
-        ],
-    }
-    render() {
+  state = {
+    activeSlide: 0,
+    isDesktop: true,
+    tours : [
+      {
+        coverImg: tourCover1,
+        id: 1103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 3,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover2,
+        id: 2103980,
+        title: 'Вихідні в Празі',
+        destination: 'Чехія, Прага / Угорщина, Будапешт',
+        calendarImg: 'icon-calendar',
+        dates: '09-12 лютого (3 ночі)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: bus,
+        transportText: 'Виїзд з Києва',
+        mealsType: 'Сніданки',
+        priceUah: '1 235',
+        priceEur: 45,
+        rating: 4,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover3,
+        id: 3103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 2,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover4,
+        id: 4103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 1,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover5,
+        id: 5103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 5,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover6,
+        id: 6103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 0,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover7,
+        id: 7103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 3,
+        compareImg: 'icon-compare',
+      },
+      {
+        coverImg: tourCover8,
+        id: 8103980,
+        title: 'Sunrise Marina Port Ghalib 5*',
+        destination: 'Єгипет, Шарм Ель Шейк',
+        calendarImg: 'icon-calendar',
+        dates: '16-26 листопада (20 ночей)',
+        visaImg: 'icon-visa',
+        visaText: 'Без візи',
+        transportImg: plane,
+        transportText: 'Виліт зі Львова',
+        mealsType: 'Ultra All-Inclusive',
+        priceUah: '2 649',
+        priceEur: 89,
+        rating: 3,
+        compareImg: 'icon-compare',
+      },
+    ],
+    filter : [
+      {
+        name: 'Всі країни',
+        state: true,
+      },
+      {
+        name: 'Екскурсійні тури',
+        state: false,
+      },
+      {
+        name: 'Єгипет',
+        state: false,
+      },
+      {
+        name: 'ОАЕ',
+        state: false,
+      },
+      {
+        name: 'Шрі Ланка',
+        state: false,
+      },
+      {
+        name: 'Домінікана',
+        state: false,
+      },
+      {
+        name: 'Тайланд',
+        state: false,
+      },
+      {
+        name: 'Греція',
+        state: false,
+      },
+      {
+        name: 'Мальдіви',
+        state: false,
+      },
+      {
+        name: 'Куба',
+        state: false,
+      },
+    ],
+  }
 
-        return (
-            <>
-               <div className="toursSales">
-                    <Container>
-                        <div className="toursSales__inner">
-                            <h3>Розпродаж подорожей</h3>
-                            <ul className="toursSales__filter">
-                                {this.state.filter.map((item, index) => 
-                                    index === 0 ? <li className="toursSales__filter-item" key={index}><button className="active" type="button">{item}</button></li>
-                                    : <li className="toursSales__filter-item" key={index}><button type="button">{item}</button></li>
-                                )}
-                            </ul>
-                                <Row>
-                                    <OneSection
-                                        coverImg={this.state.tours[0].coverImg}
-                                        id={this.state.tours[0].id}
-                                        title={this.state.tours[0].title}
-                                        destination={this.state.tours[0].destination}
-                                        calendarImg={this.state.tours[0].calendarImg}
-                                        dates={this.state.tours[0].dates}
-                                        visaImg={this.state.tours[0].visaImg}
-                                        needVisa={this.state.tours[0].needVisa}
-                                        star={this.state.tours[0].starImg}
-                                        transportImg={this.state.tours[0].transportImg}
-                                        transportText={this.state.tours[0].transportText}
-                                        mealsType={this.state.tours[0].mealsType}
-                                        priceUah={this.state.tours[0].priceUah}
-                                        priceEur={this.state.tours[0].priceEur}
-                                        compareImg={this.state.tours[0].compareImg}/>
-                                    <OneSection
-                                        coverImg={this.state.tours[1].coverImg}
-                                        id={this.state.tours[1].id}
-                                        title={this.state.tours[1].title}
-                                        destination={this.state.tours[1].destination}
-                                        calendarImg={this.state.tours[1].calendarImg}
-                                        dates={this.state.tours[1].dates}
-                                        visaImg={this.state.tours[1].visaImg}
-                                        needVisa={this.state.tours[1].needVisa}
-                                        star={this.state.tours[1].starImg}
-                                        transportImg={this.state.tours[1].transportImg}
-                                        transportText={this.state.tours[1].transportText}
-                                        mealsType={this.state.tours[1].mealsType}
-                                        priceUah={this.state.tours[1].priceUah}
-                                        priceEur={this.state.tours[1].priceEur}
-                                        compareImg={this.state.tours[1].compareImg}/>
-                                    <OneSection
-                                        coverImg={this.state.tours[0].coverImg}
-                                        id={this.state.tours[0].id}
-                                        title={this.state.tours[0].title}
-                                        destination={this.state.tours[0].destination}
-                                        calendarImg={this.state.tours[0].calendarImg}
-                                        dates={this.state.tours[0].dates}
-                                        visaImg={this.state.tours[0].visaImg}
-                                        needVisa={this.state.tours[0].needVisa}
-                                        star={this.state.tours[0].starImg}
-                                        transportImg={this.state.tours[0].transportImg}
-                                        transportText={this.state.tours[0].transportText}
-                                        mealsType={this.state.tours[0].mealsType}
-                                        priceUah={this.state.tours[0].priceUah}
-                                        priceEur={this.state.tours[0].priceEur}
-                                        compareImg={this.state.tours[0].compareImg}/>
-                                    <OneSection
-                                        coverImg={this.state.tours[0].coverImg}
-                                        id={this.state.tours[0].id}
-                                        title={this.state.tours[0].title}
-                                        destination={this.state.tours[0].destination}
-                                        calendarImg={this.state.tours[0].calendarImg}
-                                        dates={this.state.tours[0].dates}
-                                        visaImg={this.state.tours[0].visaImg}
-                                        needVisa={this.state.tours[0].needVisa}
-                                        star={this.state.tours[0].starImg}
-                                        transportImg={this.state.tours[0].transportImg}
-                                        transportText={this.state.tours[0].transportText}
-                                        mealsType={this.state.tours[0].mealsType}
-                                        priceUah={this.state.tours[0].priceUah}
-                                        priceEur={this.state.tours[0].priceEur}
-                                        compareImg={this.state.tours[0].compareImg}/>
-                                </Row>
-                                <Row>    
-                                    <OneSection
-                                        coverImg={this.state.tours[0].coverImg}
-                                        id={this.state.tours[0].id}
-                                        title={this.state.tours[0].title}
-                                        destination={this.state.tours[0].destination}
-                                        calendarImg={this.state.tours[0].calendarImg}
-                                        dates={this.state.tours[0].dates}
-                                        visaImg={this.state.tours[0].visaImg}
-                                        needVisa={this.state.tours[0].needVisa}
-                                        star={this.state.tours[0].starImg}
-                                        transportImg={this.state.tours[0].transportImg}
-                                        transportText={this.state.tours[0].transportText}
-                                        mealsType={this.state.tours[0].mealsType}
-                                        priceUah={this.state.tours[0].priceUah}
-                                        priceEur={this.state.tours[0].priceEur}
-                                        compareImg={this.state.tours[0].compareImg}/>
-                                    <OneSection
-                                        active="active"
-                                        coverImg={this.state.tours[1].coverImg}
-                                        id={this.state.tours[1].id}
-                                        title={this.state.tours[1].title}
-                                        destination={this.state.tours[1].destination}
-                                        calendarImg={this.state.tours[1].calendarImg}
-                                        dates={this.state.tours[1].dates}
-                                        visaImg={this.state.tours[1].visaImg}
-                                        needVisa={this.state.tours[1].needVisa}
-                                        star={this.state.tours[1].starImg}
-                                        transportImg={this.state.tours[1].transportImg}
-                                        transportText={this.state.tours[1].transportText}
-                                        mealsType={this.state.tours[1].mealsType}
-                                        priceUah={this.state.tours[1].priceUah}
-                                        priceEur={this.state.tours[1].priceEur}
-                                        compareImg={this.state.tours[1].compareImg}/>
-                                    <OneSection
-                                        coverImg={this.state.tours[0].coverImg}
-                                        id={this.state.tours[0].id}
-                                        title={this.state.tours[0].title}
-                                        destination={this.state.tours[0].destination}
-                                        calendarImg={this.state.tours[0].calendarImg}
-                                        dates={this.state.tours[0].dates}
-                                        visaImg={this.state.tours[0].visaImg}
-                                        needVisa={this.state.tours[0].needVisa}
-                                        star={this.state.tours[0].starImg}
-                                        transportImg={this.state.tours[0].transportImg}
-                                        transportText={this.state.tours[0].transportText}
-                                        mealsType={this.state.tours[0].mealsType}
-                                        priceUah={this.state.tours[0].priceUah}
-                                        priceEur={this.state.tours[0].priceEur}
-                                        compareImg={this.state.tours[0].compareImg}/>
-                                    <OneSection
-                                        coverImg={this.state.tours[0].coverImg}
-                                        id={this.state.tours[0].id}
-                                        title={this.state.tours[0].title}
-                                        destination={this.state.tours[0].destination}
-                                        calendarImg={this.state.tours[0].calendarImg}
-                                        dates={this.state.tours[0].dates}
-                                        visaImg={this.state.tours[0].visaImg}
-                                        needVisa={this.state.tours[0].needVisa}
-                                        star={this.state.tours[0].starImg}
-                                        transportImg={this.state.tours[0].transportImg}
-                                        transportText={this.state.tours[0].transportText}
-                                        mealsType={this.state.tours[0].mealsType}
-                                        priceUah={this.state.tours[0].priceUah}
-                                        priceEur={this.state.tours[0].priceEur}
-                                        compareImg={this.state.tours[0].compareImg}/>    
-                                </Row>
-                            <div className="toursSales__all-tours"><a href="/">Всі акційні подорожі</a></div>
-                        </div>    
-                    </Container>
-               </div>
-            </>
-        )
-    }
+  updatePredicate = this.updatePredicate.bind(this);
+  
+  componentDidMount() {
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate() {
+    this.setState({ isDesktop: window.innerWidth > 1364 });
+  }
+
+  render() {
+    const isDesktop = this.state.isDesktop;
+
+    var settings = {
+      dots: false,
+      speed: 500,
+      swipeToSlide: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      adaptiveHeight: false,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      arrows:false,
+      responsive: [
+      {
+          breakpoint: 992,
+          settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          }
+      },
+      {
+          breakpoint: 768,
+          settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          }
+      },
+      {
+          breakpoint: 576,
+          settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          }
+      },
+      ],
+    };
+    return (
+      <>
+        <div className="toursSales">
+          <Container>
+            <div className="toursSales__inner">
+              <h3>Розпродаж подорожей</h3>
+              <ul className="toursSales__filter">
+                {this.state.filter.map((item, index) =>
+                  (item.state === true) ?
+                    <li className="toursSales__filter-item" key={index}><button className="active button button_alabaster button_xs" type="button">{item.name}</button></li>
+                    : <li className="toursSales__filter-item" key={index}><button className="button button_alabaster button_xs" type="button">{item.name}</button></li>
+                )}
+              </ul>
+                {isDesktop ? (
+                  <Row>
+                    {this.state.tours.map(item =>
+                      <Col xl={3} key={item.id}>
+                        <OneSection {...item}/>
+                      </Col>
+                    )}
+                  </Row>
+                ) : (
+                  <Row className="toursSales__slider-row">
+                    <Slider {...settings}>
+                      {this.state.tours.map((item) =>
+                        <Col className="toursSales__slider-item" key={item.id}>
+                          <OneSection {...item}/>
+                        </Col>
+                      )}
+                    </Slider>
+                    <div className="toursSales__slider-counter">
+                      <span>
+                        {this.state.activeSlide + 1} / {this.state.tours.length}
+                      </span>
+                    </div>
+                  </Row>
+                )}
+              <div className="toursSales__button-wrapper">
+                <a href="/" className="button button_xl button_blue">Всі акційні подорожі <br/>{window.innerWidth}</a>
+              </div>
+              {/* <a href="/" className="toursSales__all-tours btn_default btn_blue"><span>Всі акційні подорожі</span></a> */}
+            </div>
+          </Container>
+        </div>
+      </>
+    )
+  }
 }
 
 export default ToursSales;

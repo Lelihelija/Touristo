@@ -1,8 +1,30 @@
 $font: 'Ubuntu', sans-serif;
 
-$fontBlue: #22C3CA;
-$fontWhite: #FFFFFF;
-$fontGreyNav: #CCCCCC;
-$fontDark: #35424B;
-$fontGrey: #9B9B9B;
-$fontBlack: #000000;
+$black: #000000;
+$dustyGray: #9B9B9B;
+$limedSpruce: #35424B;
+$silver: #CCCCCC;
+$white: #FFFFFF;
+$java: #22C3CA;
+$alabaster: #FBFBFB;
+
+$fontBlue: $java;
+$fontWhite: $white;
+$fontGreyNav: $silver;
+$fontDark: $limedSpruce;
+$fontGrey: $dustyGray;
+$fontBlack: $black;
+
+$transition: 0.15s ease;
+
+$screen-sm-min: map-get($grid-breakpoints, sm); // 576px
+$screen-md-min: map-get($grid-breakpoints, md); // 768px
+$screen-lg-min: map-get($grid-breakpoints, lg); // 992px
+$screen-xl-min: map-get($grid-breakpoints,xl);  // 1364px
+
+
+
+$screen-xs-max: $screen-sm-min - 1px; // 575px
+$screen-sm-max: $screen-md-min - 1px; // 767px
+$screen-md-max: $screen-lg-min - 1px; // 991px
+$screen-lg-max: $screen-xl-min - 1px; // 1363px

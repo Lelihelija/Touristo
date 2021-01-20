@@ -1,0 +1,30 @@
+.rating-view {
+    $starsCount: 5;
+
+    .icon {
+        color: transparent;
+    }
+
+    @for $i from 1 through $starsCount - 1 {
+        $selector: '&:nth-child(1)';
+
+        @if $i > 1 {
+            @for $j from 2 through $i {
+                $selector: $selector + ', &:nth-child(' + $j + ')';
+            }
+        }
+        &-#{$i} {
+            .icon {
+                #{$selector} {
+                    color: $fontBlue;
+                }
+            }
+        }
+    }
+
+    &-#{$starsCount} {
+        .icon {
+            color: $fontBlue;
+        }
+    }
+}

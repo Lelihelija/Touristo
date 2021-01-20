@@ -1,0 +1,46 @@
+html {
+    font-family: $font;
+}
+
+body {
+    background-color:$alabaster;
+}
+
+label {
+    cursor: pointer;
+}
+
+.container {
+    @media (max-width: $screen-xs-max) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.page-wrapper {
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.content__wrapper {
+    flex-grow: 1;
+}
+
+.svg-defs {
+    position: absolute;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
+
+// not working/ still are notifications in console (unable to preventdefault inside passive event listener)
+// .slick-slider,
+// .slick-track,
+// .slick-slider,
+// .slick-list {
+//     -ms-touch-action: none;
+//     touch-action: none;
+// }

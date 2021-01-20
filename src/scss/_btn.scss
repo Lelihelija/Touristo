@@ -1,0 +1,93 @@
+.button {
+    text-decoration: none;
+    padding-bottom: 22px;
+    border-radius: 100px;
+    align-items: center;
+    padding-right: 69px;
+    padding-left: 69px;
+    text-align: center;
+    padding-top: 18px;
+    font-weight: bold;
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    outline: none;
+    margin: auto;
+    width: auto;
+
+    &:hover {
+        text-decoration: none;
+        outline: none;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        padding: 12px 28px;
+    }
+
+    //button and font sizes
+
+    &_xl {
+        padding-right: 54px;
+        padding-left: 54px;
+    }
+
+    &_md {
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+
+    &_xs {
+        padding: 6px 13px 10px 13px;
+        letter-spacing: 0.0002em;
+        text-align: center;
+        line-height: 12px;
+        width: auto;
+        min-width: 98px;
+        font-size: 12px;
+        // word-break: break-word;
+    }
+
+    //button and font colors
+    &_blue {
+        transition: color $transition, background-color $transition, border $transition;
+        background-color: $java;
+        border: 1px solid $java;
+        color: $fontWhite;
+
+        &:hover {
+            background-color: $white;
+            border: 1px solid $java;
+            color: $fontBlue;
+        }
+    }
+
+    &_white {
+        transition: color $transition, background-color $transition;
+        background-color: $white;
+        color: $fontBlue;
+
+        &:hover {
+            background-color: $java;
+            color: $fontWhite;
+        }
+    }
+
+    &_alabaster {
+        transition: color $transition, background-color $transition, border $transition;
+        background-color: $alabaster;
+        border: 2px solid $java;
+        color: $fontBlue;
+
+        &:hover {
+            background-color: $java;
+            color: $fontWhite;
+        }
+
+        &.active {
+            background-color: $java;
+            color: $fontWhite;
+        }
+    }
+}
+// separate maybe a AND BUTTON
