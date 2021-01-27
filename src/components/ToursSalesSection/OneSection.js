@@ -10,10 +10,10 @@ const OneSection = (props) => {
         <>
             <div className="toursSales__tourCard">
                 <span className="toursSales__tourCard-sale">Розпродаж</span>
-                <a href="/" className="toursSales__tourCard-image-wrapper"><img src={props.coverImg} alt="tour destination"/></a>
+                <a href="#" className="toursSales__tourCard-image-wrapper"><img src={props.coverImg} alt="tour destination"/></a>
                 <div className="toursSales__tourCard-data-wrapper">
                     <span className="toursSales__tourCard-id">id: {props.id}</span>
-                    <a href="/" className="toursSales__tourCard-title"><h4>{props.title}</h4></a>
+                    <a href="#" className="toursSales__tourCard-title"><h4>{props.title}</h4></a>
                     <h5 className="toursSales__tourCard-subtitle">{props.destination}</h5>
                     <Row>
                         <Col xs="12">

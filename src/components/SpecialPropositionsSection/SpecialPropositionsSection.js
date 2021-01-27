@@ -13,7 +13,7 @@ class SpecialProposition extends Component {
         text: 'Перетворіть своє весілля на незабутню казку, неповторне дійство в одному з найчарівніших куточків світу.',
         imageSrc: firstPropositionImg,
         alt: 'wedding abroad',
-        href: '/',
+        href: '#',
         id: 1,
       },
       {
@@ -21,7 +21,7 @@ class SpecialProposition extends Component {
         text: 'Просадіть всі ваші заощадження в одному з найчарівніших куточків світу. Но касіво, з піснею і під гітарку.',
         imageSrc: secondPropositionImg,
         alt: 'Dubai shopping',
-        href: '/',
+        href: '#',
         id: 2,
       },
     ];

@@ -19,7 +19,7 @@ const Header = () => {
         },
         {
           name: 'Послуги',
-          href: '/',
+          href: '#',
         },
         {
           name: 'Типові запитання',
@@ -40,19 +40,19 @@ const Header = () => {
       items: [
         {
           name: 'Подорожі',
-          href: '/',
+          href: '#',
         },
         {
           name: 'Розпродаж',
-          href: '/',
+          href: '#',
         },
         {
           name: 'Країни',
-          href: '/',
+          href: '#',
         },
         {
           name: 'Мої подорожі',
-          href: '/',
+          href: '#',
         },
       ]
     },
@@ -83,7 +83,7 @@ const Header = () => {
               </div>
             </div>
             <div className="header__searchBtn">
-              <a href="/" className="button button_md button_blue">Знайти подорожі</a>
+              <a href="#" className="button button_md button_blue">Знайти подорожі</a>
             </div>
           </div>
         </Container>
