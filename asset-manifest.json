@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Touristo/static/css/main.b4abfda7.chunk.css",
+    "main.js": "/Touristo/static/js/main.05ccdcbc.chunk.js",
+    "main.js.map": "/Touristo/static/js/main.05ccdcbc.chunk.js.map",
+    "runtime-main.js": "/Touristo/static/js/runtime-main.09c361e6.js",
+    "runtime-main.js.map": "/Touristo/static/js/runtime-main.09c361e6.js.map",
+    "static/css/2.5934f775.chunk.css": "/Touristo/static/css/2.5934f775.chunk.css",
+    "static/js/2.b8c301b3.chunk.js": "/Touristo/static/js/2.b8c301b3.chunk.js",
+    "static/js/2.b8c301b3.chunk.js.map": "/Touristo/static/js/2.b8c301b3.chunk.js.map",
+    "static/js/3.e66c7388.chunk.js": "/Touristo/static/js/3.e66c7388.chunk.js",
+    "static/js/3.e66c7388.chunk.js.map": "/Touristo/static/js/3.e66c7388.chunk.js.map",
+    "index.html": "/Touristo/index.html",
+    "static/css/2.5934f775.chunk.css.map": "/Touristo/static/css/2.5934f775.chunk.css.map",
+    "static/css/main.b4abfda7.chunk.css.map": "/Touristo/static/css/main.b4abfda7.chunk.css.map",
+    "static/js/2.b8c301b3.chunk.js.LICENSE.txt": "/Touristo/static/js/2.b8c301b3.chunk.js.LICENSE.txt",
+    "static/media/firstProposition.4ff50f3f.png": "/Touristo/static/media/firstProposition.4ff50f3f.png",
+    "static/media/App.scss": "/Touristo/static/media/slick.c94f7671.ttf",
+    "static/media/secondProposition.84b35776.png": "/Touristo/static/media/secondProposition.84b35776.png",
+    "static/media/tourCover1.f904f37b.png": "/Touristo/static/media/tourCover1.f904f37b.png",
+    "static/media/tourCover2.dbf45ac3.png": "/Touristo/static/media/tourCover2.dbf45ac3.png",
+    "static/media/tourCover3.2e03d1ee.png": "/Touristo/static/media/tourCover3.2e03d1ee.png",
+    "static/media/tourCover4.7e7494df.png": "/Touristo/static/media/tourCover4.7e7494df.png",
+    "static/media/tourCover5.33ff0e43.png": "/Touristo/static/media/tourCover5.33ff0e43.png",
+    "static/media/tourCover6.54c54a3c.png": "/Touristo/static/media/tourCover6.54c54a3c.png",
+    "static/media/tourCover7.c20f76a5.png": "/Touristo/static/media/tourCover7.c20f76a5.png",
+    "static/media/tourCover8.7ba4e13e.png": "/Touristo/static/media/tourCover8.7ba4e13e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09c361e6.js",
+    "static/css/2.5934f775.chunk.css",
+    "static/js/2.b8c301b3.chunk.js",
+    "static/css/main.b4abfda7.chunk.css",
+    "static/js/main.05ccdcbc.chunk.js"
+  ]
+}
