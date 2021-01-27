@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Touristo/static/css/main.b4abfda7.chunk.css",
-    "main.js": "/Touristo/static/js/main.05ccdcbc.chunk.js",
-    "main.js.map": "/Touristo/static/js/main.05ccdcbc.chunk.js.map",
+    "main.js": "/Touristo/static/js/main.95d47782.chunk.js",
+    "main.js.map": "/Touristo/static/js/main.95d47782.chunk.js.map",
     "runtime-main.js": "/Touristo/static/js/runtime-main.09c361e6.js",
     "runtime-main.js.map": "/Touristo/static/js/runtime-main.09c361e6.js.map",
     "static/css/2.5934f775.chunk.css": "/Touristo/static/css/2.5934f775.chunk.css",
@@ -31,6 +31,6 @@
     "static/css/2.5934f775.chunk.css",
     "static/js/2.b8c301b3.chunk.js",
     "static/css/main.b4abfda7.chunk.css",
-    "static/js/main.05ccdcbc.chunk.js"
+    "static/js/main.95d47782.chunk.js"
   ]
 }
