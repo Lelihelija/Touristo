@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 //components
 import Icon from './../Icon/Icon';
-import phoneRegEx from '../config';
+import {phoneRegEx} from '../config';
 
 const Header = () => {
 

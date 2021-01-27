@@ -102,6 +102,225 @@
         }
     }
 
+    &__extendedSearch {
+        color: $fontWhite;
+        margin-top: 40px;
+
+        input {
+            padding: 24px 53px 24px 57px;
+            outline: none !important;
+            border-radius: 8px;
+            line-height: 24px;
+            color: $fontDark;
+            font-weight: 500;
+            font-size: 16px;
+
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+
+        &-calendar {
+            .react-datepicker__current-month,
+            .react-datepicker__day-name {
+                color: $fontBlue;
+            }
+
+            .react-datepicker__quarter-text--in-selecting-range,
+            .react-datepicker__quarter-text--keyboard-selected,
+            .react-datepicker__month-text--in-selecting-range,
+            .react-datepicker__month-text--keyboard-selected,
+            .react-datepicker__year-text--in-selecting-range,
+            .react-datepicker__year-text--keyboard-selected,
+            .react-datepicker__day--in-selecting-range,
+            .react-datepicker__quarter-text--in-range,
+            .react-datepicker__quarter-text--selected,
+            .react-datepicker__day--keyboard-selected,
+            .react-datepicker__month-text--in-range,
+            .react-datepicker__month-text--selected,
+            .react-datepicker__year-text--selected,
+            .react-datepicker__year-text--in-range,
+            .react-datepicker__day--in-range,
+            .react-datepicker__day--selected {
+                background-color: $java;
+            }
+
+            .react-datepicker__navigation {
+                outline: none !important;
+            }
+            &-checkbox {
+                margin-left: 14px;
+                margin-top: 12px;
+                display: block;
+            }
+        }
+
+        &-passengers {
+            padding-left: 53px;
+
+            &-input {
+                background-color: $white;
+                padding: 24px 53px 24px 57px;
+                outline: none !important;
+                position: relative;
+                border-radius: 8px;
+                line-height: 24px;
+                color: $fontDark;
+                font-weight: 500;
+                font-size: 16px;
+                cursor: pointer;
+
+                &.active {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+
+            .text {
+                &-invisible {
+                    color: transparent;
+                }
+
+                &-visible {
+                    color: $fontGrey;
+                }
+            }
+
+
+            .passengers__quantity {
+                &-wrapper {
+                    border-bottom-right-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    background-color: $white;
+                    padding-bottom: 16px;
+                    padding-right: 16px;
+                    position: absolute;
+                    padding-left: 16px;
+                    line-height: 24px;
+                    color: $fontDark;
+                    font-weight: 500;
+                    font-size: 16px;
+                    padding-top: 0;
+                    height: 103px;
+                    width: 303px;
+                }
+
+                &-title {
+                    flex-grow: 1;
+                }
+
+                &-item {
+                    display: flex;
+
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+
+                    .quantity {
+                        border: 1px solid #F6F6F6;
+                        border-radius: 8px;
+                        text-align: center;
+                        padding: auto;
+                        height: 33px;
+                        width: 56px;
+
+                        span {
+                            vertical-align: middle;
+                            margin: auto;
+                            width: 100%;
+                        }
+                    }
+
+                    .btn-increase,
+                    .btn-decrease {
+                        background-color: $white;
+                        border: 2px solid $java;
+                        outline: none !important;
+                        margin-left: 8px;
+                        border-radius: 100%;
+                        position: relative;
+                        height: 32px;
+                        width: 32px;
+                    }
+
+                    .btn-increase {
+                        &:hover {
+                            box-shadow: 0px 0px 10px 5px rgb(34 195 202 / 32%);
+                        }
+                    }
+
+                    .btn-decrease {
+                        &:hover {
+                            box-shadow: 0px 0px 10px 5px rgb(34 195 202 / 32%);
+                        }
+                    }
+
+
+                    .minus,
+                    .plus {
+                        background-color: $java;
+                        position: absolute;
+                        bottom: 13px;
+                        width: 16px;
+                        height: 2px;
+                        left: 6px;
+                    }
+    
+                    .plus {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        .icon-extendedSearch {
+            position: absolute;
+            color: $fontBlue;
+            font-size: 24px;
+            z-index: 2;
+            top: 24px;
+        }
+
+        &-calendar {
+            .checkmark {
+                right: 61px;
+            }
+
+            .icon {
+                left: 31px;
+            }
+        }
+
+        &-passengers {
+            .checkmark {
+                right: 10px;
+            }
+
+            .icon {
+                left: 15px;
+            }
+        }
+
+        .checkmark {
+            display:inline-block;
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            z-index: 2;
+            top: 26px;
+
+            &_item {
+                border-bottom: 2px solid $java;
+                border-left: 2px solid $java;
+                transform: rotate(-45deg);
+                height: 12px;
+                width: 14px;
+            }
+        }
+    }
+
     &__buttons {
         flex-direction: column;
         align-items: center;
@@ -111,8 +330,9 @@
 
     &__extendedsearchBtn {
         border-bottom: 1px dashed #FFFFFF;
-        margin-bottom: 32px;
         background-color: transparent;
+        outline: none !important;
+        margin-bottom: 32px;
         line-height: 24px;
         color: $fontWhite;
         font-weight: 500;
@@ -121,12 +341,11 @@
 
         &:hover {
             border-bottom-style: solid;
-            outline: none;
         }
 
         @media (max-width: $screen-sm-max) {
-            font-size: 14px;
             margin-bottom: 24px;
+            font-size: 14px;
         }
     }
 
@@ -137,7 +356,7 @@
             box-shadow: 0px 8px 24px rgba(34, 195, 202, 0.32);
             background-color: #22C3CA;
             border-radius: 50%;
-            z-index: 10;
+            color: $fontWhite;
             position: fixed;
             cursor: pointer;
             outline: none;
@@ -145,6 +364,7 @@
             bottom: 64px;
             width: 80px;
             right: 64px;
+            z-index: 10;
 
             @media (max-width: $screen-sm-max) {
                 height: 48px;

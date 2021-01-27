@@ -1,4 +1,5 @@
 
-const phoneRegEx = /[\s,\-,(,)]+/g;
+const phoneRegEx = /[\s,\-,(,),a-zA-Z.@]+/g;
+const emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export default phoneRegEx;
+export {phoneRegEx, emailRegEx};

@@ -12,7 +12,7 @@
     cursor: pointer;
     font-size: 14px;
     display: block;
-    outline: none;
+    outline: none !important;
     margin: auto;
     width: auto;
 
@@ -91,3 +91,4 @@
     }
 }
 // separate maybe a AND BUTTON
+

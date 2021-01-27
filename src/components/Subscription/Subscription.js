@@ -4,90 +4,86 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 //components
 import Icon from '../Icon/Icon';
+import {phoneRegEx, emailRegEx} from '../config';
 
 class Subscription extends Component {
   state = {
-    isDesktop: true,
-    isMobile: false,
     valueMail: '',
     valueSms: '',
     activeEmail: true,
   }
 
-  updatePredicate = this.updatePredicate.bind(this);
-
-  componentDidMount() {
-    this.updatePredicate();
-    window.addEventListener("resize", this.updatePredicate);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updatePredicate);
-  }
-
-  updatePredicate() {
-    this.setState({ isMobile: window.innerWidth < 768 })
-    this.setState({ isDesktop: window.innerWidth > 1364 });
-  }
-
   handleChangeMail(event) {
     this.setState({valueMail: event.target.value});
   }
+
   handleChangeSms(event) {
     this.setState({valueSms: event.target.value});
   }
+
   handleSubmitMail(event) {
-    console.log('A data was submitted:' + this.state.valueMail);
     event.preventDefault();
-  }
-  handleSubmitSms(event) {
-    console.log('A data was submitted:' + this.state.valueSms);
-    event.preventDefault();
+    let mail = this.state.valueMail.toLocaleLowerCase();
+    emailRegEx.test(mail) ?
+      console.log('A data was submitted:' + mail)
+    :
+      console.log('No data was submitted or your email isn`t valid')
   }
 
-  handleClick (event) {
+  handleSubmitSms(event) {
+    event.preventDefault();
+    this.state.valueSms ?
+      console.log('A data was submitted:' + this.state.valueSms.replace(phoneRegEx, ''))
+    :
+      console.log('No data was submitted')
+  }
+
+  handleClick = (event) => {
     let id = event.target.id;
     switch (id) {
       case 'email':
-        this.setState({
-          activeEmail: true,
-          valueMail: '',
-          valueSms: '',
+        this.setState((prevState) => {
+          return {
+            activeEmail: prevState.activeEmail = true,
+            valueMail: '',
+            valueSms: '',
+          }
         });
-        console.log(`a tyts' was submitted on email, this.state.activeEmail - ${this.state.activeEmail}`);
         break;
+
       case 'sms':
-        this.setState({
-          activeEmail: false,
-          valueMail: '',
-          valueSms: '',
+        this.setState((prevState) => {
+          return {
+            activeEmail: prevState.activeEmail = false,
+            valueMail: '',
+            valueSms: '',
+          }
         });
-        console.log(`a tyts' was submitted on sms, this.state.activeEmail - ${this.state.activeEmail}`);
         break;
+
       default:
         return false;
     }
-    event.preventDefault();
   }
 
   render () {
-    const isDesktop = this.state.isDesktop;
-    const isMobile = this.state.isMobile;
-
     return (
       <>
         <div className="subscription">
           <Container>
-            <div className="subscription__inner">
+            <div className={`subscription__inner ${this.state.activeEmail ? 'subscription__email-mode' : 'subscription__sms-mode'}`}>
               <h3 className="subscription__title">
                 Отримуйте найвигідніші пропозиції першими — підпишіться на нашу розсилку
               </h3>
-              {isDesktop ? (
                 <Row>
-                  <Col xs="7">
+                  <Col  xs="12" className="subscription__navigation d-lg-none">
+                    <span className={`subscription__navigation-option-email ${this.state.activeEmail ? 'email-mode' : 'sms-mode'}`} id="email" onClick={this.handleClick.bind(this)}>По email:</span>
+                    <span className={`subscription__navigation-option-sms ${this.state.activeEmail ? 'email-mode' : 'sms-mode'}`} id="sms" onClick={this.handleClick.bind(this)}>По смс:</span>
+                  </Col>
+                  <Col xs="12" lg="7" className="subscription__email-col col">
                     <form onSubmit={this.handleSubmitMail.bind(this)}>
                       <label className="subscription__input">
-                        <span>По email:</span>
+                        <span className="d-none d-lg-inline">По email:</span>
                         <span className="subscription__input-wrapper email">
                           <Icon name="icon-mail" width="1em" height="1em" />
                           <input
@@ -98,13 +94,15 @@ class Subscription extends Component {
                             onChange={this.handleChangeMail.bind(this)}/>
                         </span>
                       </label>
-                      <button className="subscription__submit" type="submit">Підписатись</button>
+                      <button className="subscription__submit-lg d-none d-lg-block" type="submit">Підписатись</button>
+                      <button className="subscription__submit button button_white button_xl d-lg-none" type="submit">Підписатись</button>
                     </form>
                   </Col>
-                  <Col xs="4">
+                  <Col xs="12" lg="5" className="subscription__sms-col col">
                     <form onSubmit={this.handleSubmitSms.bind(this)}>
-                      <label className="subscription__input">По смс:
-                        <span id="sms" className="subscription__input-wrapper sms">
+                      <label className="subscription__input">
+                        <span className="d-none d-lg-inline">По смс:</span>
+                        <span className="subscription__input-wrapper sms">
                           <Icon name="icon-mobile"/>
                           <input
                             type="tel"
@@ -114,51 +112,12 @@ class Subscription extends Component {
                             onChange={this.handleChangeSms.bind(this)}/>
                         </span>
                       </label>
-                      <button className="subscription__submit" type="submit">Підписатись</button>
+                      <button className="subscription__submit-lg d-none d-lg-block" type="submit">Підписатись</button>
+                      <button className="subscription__submit button button_white button_xl d-lg-none" type="submit">Підписатись</button>
                     </form>
                   </Col>
                 </Row>
-              ) : (
-                <Row>
-                  <Col xs="12">
-                    <form onSubmit={this.handleSubmitMail.bind(this)}>
-                      <label className="subscription__input">
-                        <div className="subscription__input-choise">
-                          <span className="subscription__input-choise-option" id="email" onClick={this.handleClick.bind(this)}>По email:</span>
-                          <span className="subscription__input-choise-option" id="sms" onClick={this.handleClick.bind(this)}>По смс:</span>
-                        </div>
-                        {this.state.activeEmail === true ?
-                          <span className="subscription__input-wrapper email">
-                            <Icon name="icon-mail" width="1em" height="1em" />
-                            <input
-                              type="email"
-                              name="email"
-                              placeholder="Ваша email адреса"
-                              value={this.state.valueMail}
-                              onChange={this.handleChangeMail.bind(this)}/>
-                          </span>
-                        :
-                          <span id="sms" className="subscription__input-wrapper sms">
-                            <Icon name="icon-mobile"/>
-                            <input
-                              type="tel"
-                              name="phone"
-                              placeholder="Ваш номер телефону"
-                              value={this.state.valueSms}
-                              onChange={this.handleChangeSms.bind(this)}/>
-                          </span>
-                        }
-                      </label>
-                      <span className="subscription__info">Не більше 1 повідомлення в тиждень. Ніякого спаму. Ви зможете відписатись будь-коли забажаєте.</span>
-                      {isMobile ? (
-                          <button className="button button_white button_xl" type="submit">Підписатись</button>
-                        ) : (
-                          <button className="subscription__submit" type="submit">Підписатись</button>
-                      )}
-                    </form>
-                  </Col>
-                </Row>
-              )}
+                <span className="subscription__info">Не більше 1 повідомлення в тиждень. Ніякого спаму. Ви зможете відписатись будь-коли забажаєте.</span>
             </div>
           </Container>
         </div>

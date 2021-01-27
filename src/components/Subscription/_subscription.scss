@@ -6,13 +6,30 @@
         margin-top: 128px;
     }
 
+    &__email-mode {
+        .subscription__sms-col {
+            @media (max-width: $screen-md-max) {
+                display: none;
+            }
+        }
+    }
+
+    &__sms-mode {
+        .subscription__email-col {
+            @media (max-width: $screen-md-max) {
+                display: none;
+            }
+        }
+    }
+
     &__inner {
         padding-bottom: 50px;
         padding-top: 10px;
 
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 100px;
+            position: relative;
             padding-top: 2px;
-            padding-bottom: 36px;
         }
     }
 
@@ -20,6 +37,16 @@
         justify-content: space-between;
         margin-bottom: 4px;
         display: flex;
+
+        @media (max-width: $screen-md-max) {
+            position: static;
+        }
+    }
+
+    .col {
+        @media (max-width: $screen-md-max) {
+            position: static;
+        }
     }
 
     &__title {
@@ -30,6 +57,14 @@
         color: $fontWhite;
         font-size: 32px;
 
+        @media (max-width: $screen-md-max) {
+            padding-bottom: 16px;
+            line-height: 32px;
+            font-size: 24px;
+        }
+
+        padding-bottom: 16px;
+
         @media (max-width: $screen-sm-max) {
             line-height: 32px;
             font-size: 24px;
@@ -39,18 +74,8 @@
     form {
         position: relative;
 
-        .button_white {
-            margin-top: 21px;
-            padding-right: 47px;
-            padding-left: 47px;
-
-            &:hover {
-                box-shadow: 0px 0px 20px 15px rgba(248, 248, 248, 0.4);
-            }
-
-            @media (max-width: $screen-sm-max) {
-                margin-top: 22px;
-            }
+        @media (max-width: $screen-md-max) {
+            position: static;
         }
     }
 
@@ -67,24 +92,46 @@
         }
     }
 
-    &__input {
-        width: 100%;
+    &__navigation {
+        justify-content: space-between;
+        padding-right: 74px;
+        display: flex;
 
-        &-choise {
-            justify-content: space-between;
-            padding-right: 57px;
-            display: flex;
+        &-option-email,
+        &-option-sms {
+            border-bottom: dotted 2px transparent;
+            padding-bottom: 3px;
+            color: $fontWhite;
+            line-height: 32px;
+            font-weight: 500;
+            font-size: 20px;
 
-            &-option {
-                @media (max-width: $screen-xl-min) {
-                    padding-bottom: 3px;
-                    border-bottom: dotted 2px transparent;
-                }
-                &:hover {
-                    border-bottom-color: $fontWhite;
+            &:hover {
+                border-bottom-color: $fontWhite;
+            }
+        }
+
+        &-option-email {
+            &.email-mode {
+                border-bottom-color: $fontWhite;
+                .sms-mode {
+                    border-bottom-color: transparent;
                 }
             }
         }
+
+        &-option-sms {
+            &.sms-mode {
+                border-bottom-color: $fontWhite;
+                .email-mode {
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
 
         &-wrapper {
             background-color: #FFFFFF;
@@ -96,7 +143,7 @@
             width: 100%;
 
             @media (max-width: $screen-sm-max) {
-                margin-top: 20px;
+                margin-top: 13px;
                 height: 56px;
             }
 
@@ -108,6 +155,12 @@
         .icon {
             margin: auto 11px auto 26px;
             color: $fontDark;
+
+            @media (max-width: $screen-md-max) {
+                margin-left: 17px;
+                font-size: 30px;
+            }
+
         }
 
         input {
@@ -125,29 +178,49 @@
         }
     }
 
-    &__submit {
-        background-color: transparent;
-        text-transform: uppercase;
-        outline:none !important;
-        letter-spacing: 0.8px;
-        position: absolute;
-        line-height: 16px;
-        font-weight: 500;
-        color: $fontBlue;
-        font-size: 12px;
-        cursor: pointer;
-        flex-shrink: 0;
-        bottom: 37px;
-        right: 34px;
+    &__submit{
+        &-lg {
+            background-color: transparent;
+            text-transform: uppercase;
+            outline:none !important;
+            letter-spacing: 0.8px;
+            position: absolute;
+            line-height: 16px;
+            font-weight: 500;
+            color: $fontBlue;
+            font-size: 12px;
+            cursor: pointer;
+            flex-shrink: 0;
+            bottom: 37px;
+            right: 34px;
 
-        @media (max-width: $screen-lg-max) {
-            bottom: 60px;
+            @media (max-width: $screen-md-max) {
+                color: $fontWhite;
+                display: block;
+            }
         }
 
-        @media (max-width: $screen-sm-max) {
-            position: initial;
-            color: $fontWhite;
-            display: block;
+        &.button_white {
+            padding-right: 47px;
+            position: absolute;
+            padding-left: 47px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 22px;
+            outline: none !important;
+            bottom: 40px;
+            right: 0;
+            left: 0;
+
+            &:hover {
+                box-shadow: 0px 0px 20px 15px rgba(248, 248, 248, 0.4);
+            }
+
+            @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+                padding-bottom: 12px;
+                padding-top: 12px;
+                bottom: 20px;
+            }
         }
     }
 
