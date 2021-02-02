@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //components
 import Header from './components/Header/Header';
@@ -25,14 +25,6 @@ import HomePage from './pages/HomePage';
 import './App.scss';
 
 function App() {
-
-  // let hash = this.props.location.hash.replace('#', '');
-  // if (hash) {
-  //   let node = ReactDOM.findDOMNode(this.refs[hash]);
-  //   if (node) {
-  //     node.scrollIntoView();
-  //   }
-  // }
 
   return (
     <div className="page-wrapper">

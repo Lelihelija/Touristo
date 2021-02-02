@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 //components
 import Icon from './../Icon/Icon';
@@ -15,23 +16,23 @@ const Header = () => {
       items: [
         {
           name: 'Про компанію',
-          href: '#',
+          href: '/about',
         },
         {
           name: 'Послуги',
-          href: '#',
+          href: '/services',
         },
         {
           name: 'Типові запитання',
-          href: '#',
+          href: '/faq',
         },
         {
           name: 'Оплата і доставка',
-          href: '#',
+          href: '/payementshipping',
         },
         {
         name: 'Контакти',
-        href: '#',
+        href: '/contactinfo',
         },
       ]
     },
@@ -40,19 +41,19 @@ const Header = () => {
       items: [
         {
           name: 'Подорожі',
-          href: '#',
+          href: '/alltrips',
         },
         {
           name: 'Розпродаж',
-          href: '#',
+          href: '/sales',
         },
         {
           name: 'Країни',
-          href: '#',
+          href: '/countries',
         },
         {
           name: 'Мої подорожі',
-          href: '#',
+          href: '/mytrips',
         },
       ]
     },
@@ -65,13 +66,15 @@ const Header = () => {
           <div className="header__inner">
             <div className="header__rectangle"><a href="#">Touristo</a></div>
             <div className="header__navbar">
-              {menu.map((item, index) => 
-                <ul key={index} className={item.className}>
-                  {item.items.map((subItem, index) => 
-                    <li key={index}><a href={subItem.href}>{subItem.name}</a></li>
-                  )}
-                </ul>
-              )}
+              <Router>
+                {menu.map((item, index) => 
+                  <ul key={index} className={item.className}>
+                    {item.items.map((subItem, index) => 
+                      <li key={index}><Link to={subItem.href}>{subItem.name}</Link></li>
+                    )}
+                  </ul>
+                )}
+              </Router>
             </div>
             <div className="header__callback">
               <div className="header__callback-icon">
