@@ -38,7 +38,7 @@ function App() {
     <div className="page-wrapper">
       <Icons/>
       <Header/>
-      <Router>
+      <Router basename="/Touristo">
         <div className="content__wrapper">
           <Switch>
             <Route exact path="/" component={HomePage}></Route>
