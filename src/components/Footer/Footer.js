@@ -196,31 +196,33 @@ class Footer extends Component {
             <div className="footer__inner">
               <Row>
                 <Col xs="12" xl="3" className="footer__info-wrapper">
-                  {
-                    contactInfo.map((item, index)=>
-                      <li className="footer__info" key={index}>
-                        {item.icon.map((subItem, index) =>
-                          <div className="footer__info-icon-wrapper" key={index}>
-                            <Icon
-                              height={subItem.height ? subItem.height : null}
-                              width={subItem.width ? subItem.width : null}
-                              name={subItem.iconName}/>
-                          </div>
-                            // <Icon {...subItem}/>
-                        )}
-                        {item.items.map((subItem, index)=>
-                          <div key={index}>
-                            <a
-                              dangerouslySetInnerHTML={{__html: subItem.text}}
-                              target={subItem.target ? subItem.target : null}
-                              href={subItem.href}>
-                            </a>
-                          </div>
-                          
-                        )}
-                      </li>
-                    )
-                  }
+                  <div className="contacts">
+                    {
+                      contactInfo.map((item, index)=>
+                        <li className="footer__info" key={index}>
+                          {item.icon.map((subItem, index) =>
+                            <div className="footer__info-icon-wrapper" key={index}>
+                              <Icon
+                                height={subItem.height ? subItem.height : null}
+                                width={subItem.width ? subItem.width : null}
+                                name={subItem.iconName}/>
+                            </div>
+                              // <Icon {...subItem}/>
+                          )}
+                          {item.items.map((subItem, index)=>
+                            <div key={index}>
+                              <a
+                                dangerouslySetInnerHTML={{__html: subItem.text}}
+                                target={subItem.target ? subItem.target : null}
+                                href={subItem.href}>
+                              </a>
+                            </div>
+                            
+                          )}
+                        </li>
+                      )
+                    }
+                  </div>
                   <ul className="footer__social-icons">
                     {
                       socials.map((item, index) =>

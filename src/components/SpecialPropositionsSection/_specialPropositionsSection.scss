@@ -1,13 +1,5 @@
 .special-proposition {
 
-    &__inner{
-        padding-top: 78px;
-
-        @media (max-width: $screen-sm-max) {
-            padding-top: 71px;
-        }
-    }
-
     .row {
         display: block;
 
@@ -63,10 +55,6 @@
         }
     }
 
-    .row {
-        margin-bottom: 78px;
-    }
-
     &__article {
         align-items: flex-end;
         border-radius: 8px;
@@ -98,12 +86,12 @@
         }
 
         &-wrapper {
-            flex-direction: column;
+            // flex-direction: column;
             position: relative;
             max-width: 100%;
             width: 330px;
             padding: 32px;
-            display: flex;
+            // display: flex;
             z-index: 2;
 
             @media (max-width: $screen-sm-max) {
@@ -111,6 +99,14 @@
                 padding-right: 16px;
                 padding-top: 32px;
                 padding-bottom: 32px;
+            }
+
+            .link-wrapper {
+                margin-top: 14px;
+
+                @media (max-width: $screen-sm-max) {
+                    margin-top: 4px;
+                }
             }
         }
 
@@ -140,18 +136,14 @@
             }
         }
 
+
         &-link {
             text-transform: uppercase;
             letter-spacing: 0.9px;
             line-height: 16px;
-            padding-top: 14px;
             font-weight: 500;
             color: $fontBlue;
             font-size: 12px;
-
-            @media (max-width: $screen-sm-max) {
-                padding-top: 28px;
-            }
 
             &:hover {
                 color: $fontBlue;

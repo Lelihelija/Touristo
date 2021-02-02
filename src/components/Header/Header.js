@@ -63,7 +63,7 @@ const Header = () => {
       <div className="header">
         <Container>
           <div className="header__inner">
-            <div className="header__rectangle"><span>Touristo</span></div>
+            <div className="header__rectangle"><a href="#">Touristo</a></div>
             <div className="header__navbar">
               {menu.map((item, index) => 
                 <ul key={index} className={item.className}>

@@ -1,12 +1,12 @@
 .button {
     text-decoration: none;
-    padding-bottom: 22px;
+    padding-bottom: 20px;
     border-radius: 100px;
     align-items: center;
     padding-right: 69px;
     padding-left: 69px;
     text-align: center;
-    padding-top: 18px;
+    padding-top: 20px;
     font-weight: bold;
     line-height: 16px;
     cursor: pointer;
@@ -38,7 +38,7 @@
     }
 
     &_xs {
-        padding: 6px 13px 10px 13px;
+        padding: 8px 13px 8px 13px;
         letter-spacing: 0.0002em;
         text-align: center;
         line-height: 12px;
@@ -68,8 +68,8 @@
         color: $fontBlue;
 
         &:hover {
-            background-color: $java;
-            color: $fontWhite;
+            background-color: scale-color($white, $lightness: -5%);
+            // color: $fontWhite;
         }
     }
 

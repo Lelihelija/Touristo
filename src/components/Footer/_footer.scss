@@ -1,8 +1,12 @@
 .footer {
     background: #FFFFFF;
+    margin-top: 80px;
+
+    @media (max-width: $screen-sm-max) {
+        margin-top: 50px;
+    }
 
     .container {
-
         @media (max-width: $screen-sm-max) {
         padding-right: 22px;
         padding-left: 22px;
@@ -15,6 +19,10 @@
 
         @media (max-width: $screen-md-max) {
             padding-bottom: 0px;
+        }
+
+        @media (max-width: $screen-xl-min) {
+            margin-top: 0;
         }
     }
 
@@ -29,6 +37,13 @@
 
         &-wrapper {
             margin-top: 72px;
+
+            .contacts {
+                @media (min-width: $screen-md-min) and (max-width: $screen-xl-min) {
+                    justify-content: space-between;
+                    display: flex;
+                }
+            }
         }
 
         &-icon-wrapper {
@@ -66,6 +81,13 @@
         margin-top: 44px;
         display: flex;
 
+        @media (min-width: $screen-md-min) and (max-width: $screen-xl-min) {
+            justify-content: center;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+
         @media (max-width: $screen-sm-max) {
             margin-top: 40px;
             margin-left: 2px;
@@ -77,6 +99,10 @@
             color: $fontBlue;
             font-size: 40px;
             cursor: pointer;
+
+            &:hover {
+                color: scale-color($fontBlue, $lightness: -10%);
+            }
 
             @media (max-width: $screen-sm-max) {
                 margin-right: 56px;
@@ -98,6 +124,10 @@
 
             @media (max-width: $screen-sm-max) {
                 letter-spacing: 1.1px;
+            }
+
+            @media (max-width: $screen-xl-min) {
+                margin-top: 16px;
             }
         }
 

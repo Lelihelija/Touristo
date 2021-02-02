@@ -11,9 +11,8 @@ label {
 }
 
 .container {
-    @media (max-width: $screen-xs-max) {
-        padding-left: 24px;
-        padding-right: 24px;
+    @media (max-width: $screen-sm-max) {
+        max-width: 100%;
     }
 }
 
@@ -27,6 +26,23 @@ label {
 
 .content__wrapper {
     flex-grow: 1;
+    padding-top: 120px;
+    margin-bottom: 40px;
+
+    .mainsearch:first-child {
+        margin-top: -120px;
+    }
+
+    .toursSales:not(:first-child),
+    .special-proposition:not(:first-child),
+    .reviews:not(:first-child),
+    .subscription:not(:first-child) {
+        margin-top: 80px;
+
+        @media (max-width: $screen-sm-max) {
+            margin-top: 50px;
+        }
+    }
 }
 
 .svg-defs {

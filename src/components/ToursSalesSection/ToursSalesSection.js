@@ -294,7 +294,7 @@ class ToursSales extends Component  {
               <div className="toursSales__button-wrapper">
                 <a href="#" className="button button_xl button_blue">Всі акційні подорожі</a>
               </div>
-              {/* <a href="/" className="toursSales__all-tours btn_default btn_blue"><span>Всі акційні подорожі</span></a> */}
+              {/* <a href="#" className="toursSales__all-tours btn_default btn_blue"><span>Всі акційні подорожі</span></a> */}
             </div>
           </Container>
         </div>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
+import { Range } from 'rc-slider';
 
 //components
 import Icon from '../Icon/Icon';
 
-import "react-datepicker/dist/react-datepicker.css";
 
 class MainSearch extends Component {
 
@@ -83,7 +83,20 @@ class MainSearch extends Component {
                         <span>гнучкі дати</span>
                       </label>
                     </Col>
-                    <Col className="mainsearch__extendedSearch-duration" xl="4">Токо</Col>
+                    <Col className="mainsearch__extendedSearch-duration" xl="4">
+                      <span className="mainsearch__extendedSearch-duration-title">Тривалість</span>
+                      <Range
+                        railStyle={{ backgroundColor: '#22C3CA', height: '8px' }}
+                        trackStyle={{ backgroundColor: '#22C3CA', height: '8px' }}
+                        handleStyle={{
+                          border: '8px solid white',
+                          backgroundColor: '#22C3CA',
+                          marginTop: '-13px',
+                          height: '32px',
+                          width: '32px',
+                        }}
+                      />
+                    </Col>
                     <Col className="mainsearch__extendedSearch-passengers" xl="4">
                     <div
                       className="mainsearch__extendedSearch-passengers-container ">

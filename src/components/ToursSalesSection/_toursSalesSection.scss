@@ -1,9 +1,4 @@
 .toursSales {
-    margin-top: 78px;
-
-    @media (max-width: $screen-sm-max) {
-        margin-top: 71px;
-    }
 
     &__inner {
         h3 {
@@ -93,7 +88,7 @@
         }
 
         &-sale {
-            background-color: #22C3CA;
+            background-color: $java;
             text-align: center;
             border-radius: 4px;
             position: absolute;

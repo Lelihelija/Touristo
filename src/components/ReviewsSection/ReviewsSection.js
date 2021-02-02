@@ -37,7 +37,8 @@ class Reviews extends Component {
     var settings = {
       dots: false,
       speed: 500,
-      swipeToSlide: true,
+      infinite: true,
+      swipeToSlide: false,
       slidesToShow: 3,
       slidesToScroll: 1,
       adaptiveHeight: true,

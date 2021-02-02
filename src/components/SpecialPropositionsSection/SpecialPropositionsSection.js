@@ -30,28 +30,21 @@ class SpecialProposition extends Component {
       dots: true,
       speed: 500,
       swipeToSlide: true,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
       dotsClass: "slick-dots custom-dots",
       adaptiveHeight: false,
       // beforeChange: (current, next) => this.setState({ activeSlide: next }),
       arrows:false,
-      // responsive: [
-      // {
-      //     breakpoint: 992,
-      //     settings: {
-      //     slidesToShow: 2,
-      //     slidesToScroll: 1,
-      //     }
-      // },
-      // {
-      //     breakpoint: 768,
-      //     settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1,
-      //     }
-      // }
-      // ],
+      responsive: [
+      {
+          breakpoint: 1030,
+          settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          }
+      },
+      ],
     };
     return (
       <>
@@ -70,7 +63,9 @@ class SpecialProposition extends Component {
                         <div className="special-proposition__article-wrapper">
                           <div className="special-proposition__article-title">{item.title}</div>
                           <span className="special-proposition__article-text">{item.text}</span>
-                          <a href={item.href} className="special-proposition__article-link">Дізнатися більше</a>
+                          <div  className="link-wrapper">
+                            <a href={item.href} className="special-proposition__article-link">Дізнатися більше</a>
+                          </div>
                         </div>
                       </div>
                     </Col>
