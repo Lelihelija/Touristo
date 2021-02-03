@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 
 //components
@@ -292,7 +293,7 @@ class ToursSales extends Component  {
                   </Row>
                 )}
               <div className="toursSales__button-wrapper">
-                <a href="#" className="button button_xl button_blue">Всі акційні подорожі</a>
+                <Link to="/" className="button button_xl button_blue">Всі акційні подорожі</Link>
               </div>
               {/* <a href="#" className="toursSales__all-tours btn_default btn_blue"><span>Всі акційні подорожі</span></a> */}
             </div>

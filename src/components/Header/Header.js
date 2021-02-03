@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 //components
 import Icon from './../Icon/Icon';
@@ -64,17 +64,16 @@ const Header = () => {
       <div className="header">
         <Container>
           <div className="header__inner">
-            <div className="header__rectangle"><a href="#">Touristo</a></div>
+            <div className="header__rectangle"><NavLink to="/">Touristo</NavLink></div>
             <div className="header__navbar">
-              <Router>
-                {menu.map((item, index) => 
-                  <ul key={index} className={item.className}>
-                    {item.items.map((subItem, index) => 
-                      <li key={index}><Link to={subItem.href}>{subItem.name}</Link></li>
-                    )}
-                  </ul>
-                )}
-              </Router>
+              <div className="header__navbar-mobile-menu">I'm here</div>
+              {menu.map((item, index) =>
+                <ul key={index} className={item.className}>
+                  {item.items.map((subItem, index) =>
+                    <li key={index}><NavLink to={subItem.href}>{subItem.name}</NavLink></li>
+                  )}
+                </ul>
+              )}
             </div>
             <div className="header__callback">
               <div className="header__callback-icon">
@@ -82,11 +81,16 @@ const Header = () => {
               </div>
               <div className="header__callback-wrapper">
                 <a href={`tel:${phone.replace(phoneRegEx, '')}`} className="header__callback-wrapper-phone">{phone}</a>
-                <button type="button" >Замовити дзвінок</button>
+                <div className="header__callback-wrapper-text">
+                  <Link to="/contactinfo">Замовити дзвінок</Link>
+                </div>
               </div>
             </div>
             <div className="header__searchBtn">
-              <a href="#" className="button button_md button_blue">Знайти подорожі</a>
+              <Link to="/countries" className="button button_md button_blue header-search">
+                <span>Знайти подорожі</span>
+                <Icon name="icon-find"/>
+              </Link>
             </div>
           </div>
         </Container>

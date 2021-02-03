@@ -8,7 +8,9 @@
 
     @media (max-width: $screen-sm-max) {
         padding-right: 0px;
+        margin-right: -8px;
         padding-left: 0px;
+        margin-left: -8px;
     }
 
     .container {
@@ -48,10 +50,13 @@
                 text-shadow: 0px 0px 2px $white;
                 text-decoration: none;
             }
+
+            @media (max-width: $screen-sm-max) {
+                font-size: 18px;
+            }
         }
 
         @media (max-width: $screen-sm-max) {
-            font-size: 20px;
             width: 90px;
         }
     }
@@ -60,10 +65,24 @@
         margin-left: 32px;
         flex-grow: 1;
 
+        @media (max-width: $screen-md-max) {
+            order:2;
+        }
+
+        &-mobile-menu {
+            @media (min-width: $screen-lg-min) {
+                display: none;
+            }
+        }
+
         & ul {
             align-self: flex-start;
             margin-bottom: 0;
             display: flex;
+
+            @media (max-width: $screen-md-max) {
+                display: none;
+            }
         }
 
         .top { 
@@ -110,10 +129,6 @@
                 }
             }
         }
-
-        @media (max-width: $screen-sm-max) {
-            display: none;
-        }
     }
 
     &__callback {
@@ -124,6 +139,10 @@
         margin-top: 12px;
         display: flex;
         width: 226px;
+
+        @media (max-width: $screen-xl-min) {
+            display: none;
+        }
 
         &-icon {
             margin-bottom: 2px;
@@ -143,21 +162,7 @@
             color: $fontBlue;
             font-size: 12px;
 
-            & button {
-                background-color: transparent;
-                letter-spacing: 0.02em;
-                outline: none;
-                line-height: 16px;
-                color: $fontBlue;
-                cursor: pointer;
-                font-size: 12px;
-
-                &:hover {
-                    text-decoration: underline 1px solid $fontBlue;
-                }
-            }
-
-            & a {
+            &-phone {
                 letter-spacing: -0.02em;
                 color: $fontBlack;
                 font-weight: bold;
@@ -166,6 +171,16 @@
                 font-size: 15px;
             }
 
+            &-text {
+                & a {
+                    letter-spacing: 0.02em;
+                    text-decoration: none;
+                    line-height: 16px;
+                    color: $fontBlue;
+                    cursor: pointer;
+                    font-size: 12px;
+                }
+            }
         }
 
         @media (max-width: $screen-sm-max) {
@@ -173,11 +188,40 @@
         }
     }
 
-    .button {
-        margin: 15px;
+    &__searchBtn {
 
-        @media (max-width: $screen-sm-max) {
-            display: none;
+        @media (max-width: $screen-md-max) {
+            flex-grow: 1;
+            order: 1;
+        }
+
+        .header-search {
+            display: block;
+
+            @media (max-width: $screen-xl-min) {
+                background-color: transparent;
+                padding: 0;
+                border: none;
+            }
+
+            span {
+                @media (max-width: $screen-xl-min) {
+                    display: none;
+                }
+            }
+
+            .icon-find {
+                font-size: 32px;
+                color: $java;
+    
+                &:hover {
+                    color: scale-color($fontBlue, $lightness: -10%);
+                }
+    
+                @media (min-width: $screen-xl-min) {
+                    display: none;
+                }
+            }
         }
     }
 }

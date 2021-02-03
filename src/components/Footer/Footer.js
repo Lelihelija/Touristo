@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 
 //components
@@ -63,15 +64,15 @@ class Footer extends Component {
         items: [
           {
             name: 'Пошук турів',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Каталог турів',
-            href: '/',
+            href: '/alltrips',
           },
           {
             name: 'Весілля за кордоном',
-            href: '/',
+            href: '/payementshipping',
           },
         ]
       },
@@ -80,11 +81,11 @@ class Footer extends Component {
         items: [
           {
             name: 'Акційні подорожі',
-            href: '/',
+            href: '/sales',
           },
           {
             name: 'Що таке Бамбарбія',
-            href: '/',
+            href: '/faq',
           },
         ]
       },
@@ -93,39 +94,39 @@ class Footer extends Component {
         items: [
           {
             name: 'Єгипет',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'ОАЄ',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Туреччина',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Домінікана',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Шрі Ланка',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Тайланд',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'ОАЄ',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Туреччина',
-            href: '/',
+            href: '/countries',
           },
           {
             name: 'Греція',
-            href: '/',
+            href: '/countries',
           },
         ]
       },
@@ -134,23 +135,23 @@ class Footer extends Component {
         items: [
           {
             name: 'Про компанію',
-            href: '/',
+            href: '/about',
           },
           {
             name: 'Послуги',
-            href: '/',
+            href: '/services',
           },
           {
             name: 'Типові запитання',
-            href: '/',
+            href: '/faq',
           },
           {
             name: 'Доставка та оплата',
-            href: '/',
+            href: '/payementshipping',
           },
           {
             name: 'Контакти',
-            href: '/',
+            href: '/contactinfo',
           },
         ]
       },
@@ -253,7 +254,7 @@ class Footer extends Component {
                       <ul className="footer__menu-wrapper">
                         {
                           item.items.map((subItem, index) => 
-                            <li key={index}><a href={subItem.href} className="footer__menu-item">{subItem.name}</a></li>
+                            <li key={index}><NavLink to={subItem.href} className="footer__menu-item">{subItem.name}</NavLink></li>
                           )
                         }
                       </ul>

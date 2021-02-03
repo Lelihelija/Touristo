@@ -27,28 +27,28 @@ import './App.scss';
 function App() {
 
   return (
-    <div className="page-wrapper">
-      <Icons/>
-      <Header/>
-      <Router basename="/Touristo">
-        <div className="content__wrapper">
-          <Switch>
-            <Route exact path="/" component={HomePage}></Route>
-            <Route path="/payementshipping" component={PayementShippingPage}></Route>
-            <Route path="/contactinfo" component={ContactInfoPage}></Route>
-            <Route path="/countries" component={CountriesPage}></Route>
-            <Route path="/alltrips" component={AllTripsPage}></Route>
-            <Route path="/services" component={ServicesPage}></Route>
-            <Route path="/mytrips" component={MyTripsPage}></Route>
-            <Route path="/about" component={AboutPage}></Route>
-            <Route path="/sales" component={SalesPage}></Route>
-            <Route path="/faq" component={FAQPage}></Route>
-            <Route component={NotFoundPage}></Route>
-          </Switch>
-        </div>
-      </Router>
-      <Footer/>
-    </div>
+    <Router basename="/Touristo">
+      <div className="page-wrapper">
+        <Icons/>
+        <Header/>
+          <div className="content__wrapper">
+            <Switch>
+              <Route exact path="/" component={HomePage}></Route>
+              <Route path="/payementshipping" component={PayementShippingPage}></Route>
+              <Route path="/contactinfo" component={ContactInfoPage}></Route>
+              <Route path="/countries" component={CountriesPage}></Route>
+              <Route path="/alltrips" component={AllTripsPage}></Route>
+              <Route path="/services" component={ServicesPage}></Route>
+              <Route path="/mytrips" component={MyTripsPage}></Route>
+              <Route path="/about" component={AboutPage}></Route>
+              <Route path="/sales" component={SalesPage}></Route>
+              <Route path="/faq" component={FAQPage}></Route>
+              <Route component={NotFoundPage}></Route>
+            </Switch>
+          </div>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 

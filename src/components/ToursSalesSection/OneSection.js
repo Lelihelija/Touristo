@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 
 //components
@@ -10,10 +11,10 @@ const OneSection = (props) => {
         <>
             <div className="toursSales__tourCard">
                 <span className="toursSales__tourCard-sale">Розпродаж</span>
-                <a href="#" className="toursSales__tourCard-image-wrapper"><img src={props.coverImg} alt="tour destination"/></a>
+                <Link to="/" className="toursSales__tourCard-image-wrapper"><img src={props.coverImg} alt="tour destination"/></Link>
                 <div className="toursSales__tourCard-data-wrapper">
                     <span className="toursSales__tourCard-id">id: {props.id}</span>
-                    <a href="#" className="toursSales__tourCard-title"><h4>{props.title}</h4></a>
+                    <Link to="/" className="toursSales__tourCard-title"><h4>{props.title}</h4></Link>
                     <h5 className="toursSales__tourCard-subtitle">{props.destination}</h5>
                     <Row>
                         <Col xs="12">
