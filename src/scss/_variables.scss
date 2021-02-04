@@ -16,6 +16,7 @@ $fontGrey: $dustyGray;
 $fontBlack: $black;
 
 $transition: 0.15s ease;
+$transition05s: 0.5s ease;
 
 $screen-sm-min: map-get($grid-breakpoints, sm); // 576px
 $screen-md-min: map-get($grid-breakpoints, md); // 768px
