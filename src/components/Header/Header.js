@@ -8,11 +8,9 @@ import {phoneRegEx} from '../config';
 
 const Header = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
 
   const toggleHamburger = () => {
     setHamburgerActive(!hamburgerActive);
-    console.log(hamburgerActive);
   }
 
   const phone = '+38 050 914 19 59';
@@ -82,7 +80,7 @@ const Header = () => {
                 <div className={hamburgerActive ? 'header__navbar-wrapper' : 'header__navbar-wrapper hidden'}>
                   {menu.map((item, index) =>
                     <ul key={index}
-                      className={hamburgerActive ?`${item.className}` : `${item.className} mobile`}>
+                      className={item.className}>
                       {item.items.map((subItem, index) =>
                         <li key={index}><NavLink to={subItem.href}>{subItem.name}</NavLink></li>
                       )}
@@ -92,7 +90,7 @@ const Header = () => {
               </div>
               <div className="header__callback">
                 <div className="header__callback-icon">
-                  <Icon name="icon-phone" width="1em" height="1em"/>
+                  <Icon name="icon-phone"/>
                 </div>
                 <div className="header__callback-wrapper">
                   <a href={`tel:${phone.replace(phoneRegEx, '')}`} className="header__callback-wrapper-phone">{phone}</a>

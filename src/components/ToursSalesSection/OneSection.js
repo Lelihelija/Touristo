@@ -60,10 +60,10 @@ const OneSection = (props) => {
                             </div>
                         </Col>
                         <Col xs="12">
-                            <div className="toursSales__tourCard-info-compare-checkbox compare-checkbox">
-                                <label className="compare-checkbox__label">
-                                    <input type='checkbox'/>
-                                    <span className="compare-checkbox__icon"></span>
+                            <div className="toursSales__tourCard-info-compare-checkbox checkbox">
+                                <label className="checkbox__label">
+                                    <input className="checkbox__input" type='checkbox'/>
+                                    <span className="checkbox__icon"></span>
                                     <span className="compare-checkbox__text">Додати до порівняння</span>
                                 </label>
                             </div>

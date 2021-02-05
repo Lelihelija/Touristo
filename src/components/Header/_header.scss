@@ -63,6 +63,7 @@
 
     &__info-wrapper {
         justify-content: space-between;
+        align-items: center;
         margin-left: 31px;
         display: flex;
         width: 100%;
@@ -88,7 +89,6 @@
             outline: none !important;
             position: relative;
             margin-right: 18px;
-            margin-top: 23px;
             height: 32px;
             width: 32px;
 
@@ -110,9 +110,9 @@
 
                 &::before,
                 &::after {
+                    transition: transform $transition05s;
                     background-color: $java;
                     position: absolute;
-                    transition: transform $transition05s;
                     content: '';
                     width: 24px;
                     height: 2px;
@@ -153,7 +153,9 @@
             flex-grow: 1;
 
             &.hidden {
-                display: none;
+                @media (max-width: $screen-md-max) {
+                    display: none;
+                }
             }
 
             @media (max-width: $screen-md-max) {
@@ -182,7 +184,6 @@
         }
 
         .top {
-            padding-top: 10px;
 
             @media (max-width: $screen-md-max) {
                 width: 100%;
@@ -203,7 +204,7 @@
                 & a {
                     letter-spacing: 0.02em;
                     color: $fontGreyNav;
-                    line-height: 16px;
+                    line-height: 12px;
                     font-weight: 400;
                     font-size: 12px;
                     cursor: pointer;
@@ -230,6 +231,10 @@
 
         .bottom {
             margin-top: 8px;
+
+            @media (min-width: $screen-xl-min) {
+                margin-bottom: 19px;
+            }
 
             @media (max-width: $screen-md-max) {
                 width: 100%;
@@ -315,6 +320,10 @@
                 line-height: 16px;
                 cursor: pointer;
                 font-size: 15px;
+
+                &:hover {
+                    color: $fontBlack;
+                }
             }
 
             &-text {
@@ -325,6 +334,10 @@
                     color: $fontBlue;
                     cursor: pointer;
                     font-size: 12px;
+
+                    &:hover {
+                        text-decoration: under;
+                    }
                 }
             }
         }
@@ -337,7 +350,6 @@
     &__searchBtn {
         padding-right: 14px;
         padding-left: 14px;
-        padding-top: 15px;
 
         @media (max-width: $screen-md-max) {
             order: 1;
@@ -346,28 +358,27 @@
         .header-search {
             display: block;
 
-            @media (max-width: $screen-xl-min) {
+            @media (max-width: $screen-lg-max) {
                 background-color: transparent;
                 padding: 0;
                 border: none;
             }
 
             span {
-                @media (max-width: $screen-xl-min) {
+                @media (max-width: $screen-lg-max) {
                     display: none;
                 }
             }
 
             .icon-find {
                 margin-right: 10px;
-                margin-top: 10px;
                 font-size: 27px;
                 color: $java;
 
                 &:hover {
                     color: scale-color($fontBlue, $lightness: -10%);
                 }
-    
+
                 @media (min-width: $screen-xl-min) {
                     display: none;
                 }
@@ -375,31 +386,3 @@
         }
     }
 }
-
-
-
-// --------------------------
-// .header {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//      padding-left: 10px;
-//      padding-right: 10px;
-
-//     background-color: rgba(161, 250, 166, 0.5);
-
-//     &__inner {
-//         background-color: rgba(248, 126, 126, 0.5);
-
-//         height: 150px;
-//     }
-
-//     .container {
-//         max-width: 1200px;
-//     }
-
-//     & + &_next-block {
-//         margin-top: 150px;
-//     }
-// }

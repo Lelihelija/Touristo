@@ -108,25 +108,57 @@
 
     &__extendedSearch {
         color: $fontWhite;
-        margin-top: 40px;
+        margin-top: 30px;
 
-        input {
-            padding: 24px 53px 24px 57px;
-            outline: none !important;
-            border-radius: 8px;
-            line-height: 24px;
-            color: $fontDark;
-            font-weight: 500;
-            font-size: 16px;
-
-            &:focus {
-                &::placeholder {
-                    color: transparent;
-                }
-            }
+        @media (max-width: $screen-lg-max) {
+            justify-content: space-between;
+            display: flex;
         }
 
         &-calendar {
+            margin-top: 10px;
+
+            @media (max-width: $screen-lg-max) {
+                order: 2;
+            }
+
+            @media (min-width: $screen-xl-min) {
+                padding-right: 54px;
+            }
+
+            &-wrapper {
+                position: relative;
+            }
+
+            .checkmark {
+                right: 10px;
+            }
+
+            .icon {
+                left: 31px;
+            }
+
+            .react-datepicker-wrapper {
+                width: 100%;
+
+                input {
+                    padding: 24px 53px 24px 57px;
+                    outline: none !important;
+                    border-radius: 8px;
+                    line-height: 24px;
+                    color: $fontDark;
+                    font-weight: 500;
+                    font-size: 16px;
+                    width: 100%;
+
+                    &:focus {
+                        &::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+            }
+
             .react-datepicker__current-month,
             .react-datepicker__day-name {
                 color: $fontBlue;
@@ -154,14 +186,34 @@
             .react-datepicker__navigation {
                 outline: none !important;
             }
+
             &-checkbox {
                 margin-left: 14px;
-                margin-top: 12px;
+                margin-bottom: 0;
+                margin-top: 7px;
                 display: block;
+
+                .checkbox__text {
+                    line-height: 24px;
+                    font-size: 14px;
+                    color: $white;
+                }
             }
         }
 
         &-duration {
+            margin-right: -36px;
+            margin-left: -36px;
+            max-width: none;
+            flex-grow: 1;
+
+            @media (max-width: $screen-lg-max) {
+                padding-right: 19px;
+                margin-bottom: 10px;
+                margin-right: 2px;
+                margin-left: 2px;
+                order: 1;
+            }
 
             &-title {
                 margin-bottom: 6px;
@@ -170,16 +222,37 @@
                 font-size: 16px;
             }
 
-            // .rc-slider-handle {
-            //     border: 8px solid $white;
-            //     background-color: $java;
-            //     height: 32px;
-            //     width: 32px;
-            // }
+            &-slider {
+                padding-right: 15px;
+                padding-left: 15px;
+                width: 100%;
+            }
+
+            .rc-slider {
+                margin-bottom: 13px;
+                margin-top: 15px;
+                padding-left: 15px ;
+                padding-right: 15px ;
+            }
+
+            &-text {
+                justify-content: space-between;
+                display: flex;
+
+                span {
+                    font-size: 14px;
+                }
+            }
         }
 
         &-passengers {
             padding-left: 53px;
+            margin-top: 10px;
+
+            @media (max-width: $screen-lg-max) {
+                padding-left: 16px;
+                order: 3;
+            }
 
             &-container {
                 position: relative;
@@ -191,7 +264,6 @@
                 outline: none !important;
                 position: relative;
                 border-radius: 8px;
-                line-height: 24px;
                 color: $fontDark;
                 font-weight: 500;
                 min-height: 72px;
@@ -211,6 +283,10 @@
 
                 &-visible {
                     color: $fontGrey;
+
+                    @media (min-width: $screen-lg-min) {
+                        font-size: 15px;
+                    }
                 }
             }
 
@@ -310,16 +386,6 @@
             top: 24px;
         }
 
-        &-calendar {
-            .checkmark {
-                right: 61px;
-            }
-
-            .icon {
-                left: 31px;
-            }
-        }
-
         &-passengers {
             .checkmark {
                 right: 10px;
@@ -351,7 +417,6 @@
     &__buttons {
         flex-direction: column;
         align-items: center;
-        padding-top: 14px;
         display: flex;
     }
 
@@ -360,18 +425,23 @@
         background-color: transparent;
         outline: none !important;
         margin-bottom: 32px;
-        line-height: 24px;
+        line-height: 16px;
         color: $fontWhite;
         font-weight: 500;
         font-size: 16px;
         cursor: pointer;
 
+        &.inactive {
+            margin-top: 20px;
+        }
+
         &:hover {
             border-bottom-style: solid;
         }
 
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: $screen-md-max) {
             margin-bottom: 24px;
+            margin-top: 15px;
             font-size: 14px;
         }
     }
@@ -404,10 +474,6 @@
                 width: 48px;
                 right: 24px;
             }
-
-            // &:hover {
-            //     translate: rotate ; // find smth interesting
-            // }
         }
 
         & .icon {

@@ -63,41 +63,63 @@ class MainSearch extends Component {
               </label>
               {extendedSearchActive ?
                   <Row className="mainsearch__extendedSearch">
-                    <Col className="mainsearch__extendedSearch-calendar" xl="4">
+                    <Col className="mainsearch__extendedSearch-calendar" xs="12" md="5" xl="4">
                       <Icon name="icon-calendar" customClass="icon-extendedSearch"/>
-                      <span className="checkmark">
-                        <div className="checkmark_item"></div>
-                      </span>
-                      <DatePicker
-                        closeOnScroll={true}
-                        placeholderText="Місяць або дата"
-                        // selected={this.state.startDate}
-                        shouldCloseOnSelect={false}
-                        startDate={this.state.startDate}
-                        endDate={this.state.endDate}
-                        onChange={this.onDateChange}
-                        selectsRange
-                      />
-                      <label className="mainsearch__extendedSearch-calendar-checkbox">
-                        <input type="checkbox"/>
-                        <span>гнучкі дати</span>
+                      <div className="mainsearch__extendedSearch-calendar-wrapper">
+                        <span className="checkmark">
+                          <div className="checkmark_item"></div>
+                        </span>
+                        <DatePicker
+                          closeOnScroll={true}
+                          placeholderText="Місяць або дата"
+                          // selected={this.state.startDate}
+                          shouldCloseOnSelect={false}
+                          startDate={this.state.startDate}
+                          endDate={this.state.endDate}
+                          onChange={this.onDateChange}
+                          selectsRange
+                        />
+                      </div>
+                      <label className="mainsearch__extendedSearch-calendar-checkbox checkbox__label">
+                        <input className="checkbox__input" type="checkbox"/>
+                        <span className="checkbox__icon"></span>
+                        <span className="checkbox__text">гнучкі дати</span>
                       </label>
                     </Col>
-                    <Col className="mainsearch__extendedSearch-duration" xl="4">
+                    <Col className="mainsearch__extendedSearch-duration" xl="4" lg="12">
                       <span className="mainsearch__extendedSearch-duration-title">Тривалість</span>
-                      <Range
-                        railStyle={{ backgroundColor: '#22C3CA', height: '8px' }}
-                        trackStyle={{ backgroundColor: '#22C3CA', height: '8px' }}
-                        handleStyle={{
-                          border: '8px solid white',
-                          backgroundColor: '#22C3CA',
-                          marginTop: '-13px',
-                          height: '32px',
-                          width: '32px',
-                        }}
-                      />
+                      <div className="mainsearch__extendedSearch-duration-slider">
+                        <Range
+                          min={2}
+                          max={120}
+                          allowCross={false}
+                          railStyle={{ backgroundColor: '#22C3CA', height: 8 }}
+                          trackStyle={[{ backgroundColor: '#22C3CA', height: 8 }, { backgroundColor: '#22C3CA', height: 8 }]}
+                          handleStyle={[{
+                              backgroundColor: '#22C3CA',
+                              border: '8px solid white',
+                              boxShadow: 'none',
+                              marginTop: -13,
+                              height: 32,
+                              width: 32,
+                            },
+                            {
+                              backgroundColor: '#22C3CA',
+                              border: '8px solid white',
+                              boxShadow: 'none',
+                              marginTop: -13,
+                              height: 32,
+                              width: 32,
+                            }
+                          ]}
+                        />
+                      </div>
+                      <div className="mainsearch__extendedSearch-duration-text">
+                        <span>від 2 днів</span>
+                        <span>до 120 днів</span>
+                      </div>
                     </Col>
-                    <Col className="mainsearch__extendedSearch-passengers" xl="4">
+                    <Col className="mainsearch__extendedSearch-passengers" xs="12" md="5" xl="4">
                     <div
                       className="mainsearch__extendedSearch-passengers-container ">
                         <div className={this.state.choosePassengersActive ? 'mainsearch__extendedSearch-passengers-input active' : 'mainsearch__extendedSearch-passengers-input'} onClick={this.choosePassengersToggle}>
@@ -143,7 +165,7 @@ class MainSearch extends Component {
               }
               <div className="mainsearch__buttons">
                 <button
-                  className="mainsearch__extendedsearchBtn"
+                  className={extendedSearchActive ? 'mainsearch__extendedsearchBtn' : 'mainsearch__extendedsearchBtn inactive'}
                   type="button"
                   onClick={this.extendedSearchToggle}
                   >{extendedSearchActive ? 'Сховати' : 'Розширений пошук'}
