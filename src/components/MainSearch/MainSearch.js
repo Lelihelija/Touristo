@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import { Range } from 'rc-slider';
+import ReactTags from 'react-tag-autocomplete';
 
 //components
 import Icon from '../Icon/Icon';
@@ -14,8 +15,51 @@ class MainSearch extends Component {
     choosePassengersActive: true,
     startDate: new Date(),
     endDate: null,
-    adultsQuantity: 1,
+    adultsQuantity: 2,
     childrenQuantity: 0,
+  }
+
+  passengersQuantity = (event) => {
+    const adults = +this.state.adultsQuantity;
+    const children = +this.state.childrenQuantity;
+
+      switch (event.target.id) {
+        case 'adultsIncrease':
+          if (adults < 20) {
+          this.setState({adultsQuantity: adults + 1});
+          };
+          break;
+        case 'adultsDecrease':
+          if (adults > 1) {
+          this.setState({adultsQuantity: adults - 1});
+          };
+          break;
+        case 'childrenIncrease':
+          if (children < 20) {
+            this.setState({childrenQuantity: children + 1});
+          };
+          break;
+        case 'childrenDecrease':
+          if (children > 0) {
+            this.setState({childrenQuantity: children - 1});
+          };
+          break;
+        case 'adultsOnChange':
+          // if ((adults > 1) && (adults < 20)) {
+          this.setState({adultsQuantity: event.target.value});
+          // };
+          console.log('quantity change in input');
+          break;
+        case 'childrenOnChange':
+          // if ((children > 0) && (children < 20)) {
+          this.setState({childrenQuantity: event.target.value});
+          // };
+          console.log('quantity change in input');
+          break;
+        default:
+          break;
+      }
+    
   }
 
   extendedSearchToggle = () => {
@@ -29,22 +73,11 @@ class MainSearch extends Component {
     this.setState({startDate: start, endDate: end});
   }
 
-  choosePassengersToggle = (e) => {
+  choosePassengersToggle = () => {
     this.setState(prevState => {
       return {choosePassengersActive: !prevState.choosePassengersActive,}
     });
-    console.log('woopie!!');
   }
-
-  // onPassengersChange = (passengers) => {
-  //   // const [adults, children] = passengers;
-  //   // this.setState({adultsQuantity: adults, childrenQuantity: children});
-  // }
-
-  // const ExampleCustomInput = ({ value, onClick }) => (
-  //   <button className="example-custom-input" onClick={onClick}>
-  //     {value}
-  //   </button>
 
   render() {
     const extendedSearchActive = this.state.extendedSearchActive;
@@ -133,23 +166,23 @@ class MainSearch extends Component {
                           <div className="mainsearch__extendedSearch-passengers-quantity passengers__quantity-wrapper">
                             <div className="passengers__quantity-item">
                               <span className="passengers__quantity-title">Дорослих</span>
-                              <div className="quantity"><span>2</span></div>
-                              <button type="button" className="btn-increase">
+                              <div className="quantity"><input type="number" id="adultsOnChange" onChange={this.passengersQuantity} min="1" max="20" value={this.state.adultsQuantity}></input></div>
+                              <button type="button" className="btn-increase" id="adultsIncrease" onClick={this.passengersQuantity}>
                                 <div className="minus"></div>
                                 <div className="plus"></div>
                               </button>
-                              <button type="button" className="btn-decrease">
+                              <button type="button" id="adultsDecrease" className="btn-decrease" onClick={this.passengersQuantity}>
                                 <div className="minus"></div>
                               </button>
                             </div>
                             <div className="passengers__quantity-item">
                               <span className="passengers__quantity-title">Дітей</span>
-                              <div className="quantity"><span>0</span></div>
-                              <button type="button" className="btn-increase">
+                              <div className="quantity"><input type="number" min="0" max="20" id="childrenOnChange" onChange={this.passengersQuantity} value={this.state.childrenQuantity}></input></div>
+                              <button type="button" id="childrenIncrease" className="btn-increase" onClick={this.passengersQuantity}>
                                 <div className="minus"></div>
                                 <div className="plus"></div>
                               </button>
-                              <button type="button" className="btn-decrease">
+                              <button type="button" id="childrenDecrease" className="btn-decrease" onClick={this.passengersQuantity}>
                                 <div className="minus"></div>
                               </button>
                             </div>

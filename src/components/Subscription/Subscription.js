@@ -4,13 +4,16 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 //components
 import Icon from '../Icon/Icon';
-import {phoneRegEx, emailRegEx} from '../config';
+import {phoneRegEx, emailRegEx, PopupError} from '../config';
+
 
 class Subscription extends Component {
   state = {
     valueMail: '',
     valueSms: '',
     activeEmail: true,
+    showErrorMail: false,
+    showErrorSms: false,
   }
 
   handleChangeMail(event) {
@@ -24,18 +27,20 @@ class Subscription extends Component {
   handleSubmitMail(event) {
     event.preventDefault();
     let mail = this.state.valueMail.toLocaleLowerCase();
-    emailRegEx.test(mail) ?
-      console.log('A data was submitted:' + mail)
+    return emailRegEx.test(mail) ?
+      this.setState({showErrorMail: false})
     :
-      console.log('No data was submitted or your email isn`t valid')
+      this.setState({showErrorMail: true})
   }
 
   handleSubmitSms(event) {
     event.preventDefault();
+    this.state.valueSms.replace(phoneRegEx, '');
     this.state.valueSms ?
-      console.log('A data was submitted:' + this.state.valueSms.replace(phoneRegEx, ''))
+      // console.log('A data was submitted:' + this.state.valueSms.replace(phoneRegEx, ''))
+      this.setState({showErrorSms: false})
     :
-      console.log('No data was submitted')
+      this.setState({showErrorSms: true})
   }
 
   handleClick = (event) => {
@@ -96,6 +101,7 @@ class Subscription extends Component {
                       </label>
                       <button className="subscription__submit-lg d-none d-lg-block" type="submit">Підписатись</button>
                       <button className="subscription__submit button button_white button_xl d-lg-none" type="submit">Підписатись</button>
+                      <PopupError error={this.state.showErrorMail}/>
                     </form>
                   </Col>
                   <Col xs="12" lg="5" className="subscription__sms-col col">
@@ -114,6 +120,7 @@ class Subscription extends Component {
                       </label>
                       <button className="subscription__submit-lg d-none d-lg-block" type="submit">Підписатись</button>
                       <button className="subscription__submit button button_white button_xl d-lg-none" type="submit">Підписатись</button>
+                      <PopupError error={this.state.showErrorSms}/>
                     </form>
                   </Col>
                 </Row>

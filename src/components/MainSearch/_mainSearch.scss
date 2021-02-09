@@ -329,10 +329,27 @@
                         height: 33px;
                         width: 56px;
 
-                        span {
+                        input[type=number] {
+                            text-align: center;
+                            // -webkit-appearance: none;
+                            outline: none !important;
                             vertical-align: middle;
                             margin: auto;
                             width: 100%;
+
+                            &:focus {
+                                outline: none;
+                
+                                &::placeholder {
+                                    color: transparent;
+                                }
+                            }
+
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
                         }
                     }
 
@@ -350,13 +367,13 @@
 
                     .btn-increase {
                         &:hover {
-                            box-shadow: 0px 0px 10px 5px rgb(34 195 202 / 32%);
+                            background-color: $java05;
                         }
                     }
 
                     .btn-decrease {
                         &:hover {
-                            box-shadow: 0px 0px 10px 5px rgb(34 195 202 / 32%);
+                            background-color: $java05;
                         }
                     }
 

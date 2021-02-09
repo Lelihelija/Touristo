@@ -155,7 +155,6 @@
                 margin-left: 17px;
                 font-size: 30px;
             }
-
         }
 
         input {
@@ -226,5 +225,13 @@
             font-size: 12px;
             display: block;
         }
+    }
+
+    .error {
+        background-color: rgb(58, 114, 108);
+        border-radius: 8px;
+        position: absolute;
+        color: $fontWhite;
+        padding: 4px;
     }
 }
