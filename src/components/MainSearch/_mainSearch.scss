@@ -46,60 +46,152 @@
         font-size: 16px;
 
         @media (max-width: $screen-sm-max) {
-            font-size: 14px;
-            margin-top: 10px;
             line-height: 23px;
+            margin-top: 10px;
+            font-size: 14px;
         }
     }
 
-    &__input {
-        background-color: #FFFFFF;
-        border-radius: 8px;
-        margin-bottom: 0px;
-        line-height: 24px;
-        margin-top: 27px;
-        color: $fontGrey;
-        font-weight: 700;
-        font-size: 16px;
-        display: flex;
-        height: 72px;
 
-        @media (max-width: $screen-sm-max) {
-            height: 56px;
-        }
+    &__input {
+        position: relative;
+        margin-bottom: 0px;
+        margin-top: 10px;
+        width: 100%;
 
         & .icon {
+            position: absolute;
             margin: auto 16px;
             color: $fontBlue;
-            font-size: 34px;
+            font-size: 32px;
             display: block;
+            z-index: 2;
+            top: 20px;
 
             @media (max-width: $screen-sm-max) {
                 margin: auto 8px;
                 font-size: 28px;
             }
         }
+    }
 
-        & input {
-            background-color: transparent;
-            letter-spacing: 0.03em;
-            display: block;
+    .react-tags {
+        background-color: $white;
+        align-items: center;
+        position: relative;
+        border-radius: 8px;
+        padding-left: 63px;
+        padding-top: 17px;
+        min-height: 72px;
+
+        &__search {
+            vertical-align: top;
+            display: inline-block;
+            position: relative;
             height: 100%;
-            width: 100%;
 
-            @media (max-width: $screen-sm-max) {
-                font-weight: 500;
-                font-size: 15px;
+            &-wrapper {
+                border-radius: 8px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &__suggestions {
+            background-color: $white;
+            border: 1px $java solid;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            border-radius: 8px;
+            overflow: hidden;
+            color: $fontGrey;
+            font-weight: 500;
+            font-size: 16px;
+            display: flex;
+            width: 100%;
+            z-index: 10;
+            top: 90%;
+            left: 0;
+
+            ul {
+                text-align: left;
+                overflow: hidden;
+                padding: 0px;
+                margin: 0px;
+                width: 100%;
             }
 
-            &:focus {
-                outline: none;
+            li {
+                background-color: $white;
+                padding-bottom: 5px;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-top: 5px;
+                text-align: left;
+                display: block;
+                width: 100%;
 
-                &::placeholder {
-                    color: transparent;
+                &:hover {
+                    cursor: pointer;
+                    background: #eee;
+                }
+                &.is-active {
+                    background: #b7cfe0;
+                }
+
+                mark {
+                    text-decoration: underline 1px solid $java;
+                    background: none !important;
+                    padding: 0;
                 }
             }
         }
+
+        &__selected {
+            color: $fontDark;
+            font-weight: 500;
+            display: inline;
+            font-size: 16px;
+            z-index: 3;
+            top: 15px;
+
+            button {
+                background-color: transparent;
+                outline: none !important;
+                border: 2px solid $java;
+                display: inline-block;
+                vertical-align: top;
+                margin-bottom: 10px;
+                border-radius: 46px;
+                padding: 6px 16px;
+
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+
+                &::after {
+                    content: '\2715';
+                    margin-left: 8px;
+                    color: $java;
+                }
+            }
+        }
+
+        .react-tags__search-input {
+            outline: none !important;
+            width: 250px !important;
+            margin-bottom: 10px;
+            color: $fontGrey;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 10px;
+            height: 40px;
+
+            @media (max-width: $screen-sm-max) {
+                height: 56px;
+            }
+    }
 
         & img {
             padding: 0px 16px;
@@ -441,7 +533,7 @@
         border-bottom: 1px dashed #FFFFFF;
         background-color: transparent;
         outline: none !important;
-        margin-bottom: 32px;
+        margin-bottom: 36px;
         line-height: 16px;
         color: $fontWhite;
         font-weight: 500;

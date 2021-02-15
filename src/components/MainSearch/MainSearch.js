@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import onClickOutside from "react-onclickoutside";
+import ReactTags from 'react-tag-autocomplete';
 import DatePicker from 'react-datepicker';
 import { Range } from 'rc-slider';
-import ReactTags from 'react-tag-autocomplete';
+import axios from 'axios';
 
 //components
 import Icon from '../Icon/Icon';
+
+// const api = axios.create({
+//   baseURL: `https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/v2/countries?limit=200&page=1&offset=0&sort=asc&order_by=country`
+// })
 
 
 class MainSearch extends Component {
@@ -17,7 +23,37 @@ class MainSearch extends Component {
     endDate: null,
     adultsQuantity: 2,
     childrenQuantity: 0,
+    suggestions: [],
+    tags: [],
   }
+
+  componentDidMount() {
+    axios.get('https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/v2/countries?limit=200&page=1&offset=0&sort=asc&order_by=country')
+      .then(res => {
+        res.data.results.map((elem, index) => {
+          return this.setState(prevState => ({
+            suggestions: [...prevState.suggestions, {id: index, name: elem.name}]
+          }))
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      });
+  }
+
+  reactTags = React.createRef()
+
+  onDelete (i) {
+    const tags = this.state.tags.slice(0)
+    tags.splice(i, 1)
+    this.setState({ tags })
+  }
+
+  onAddition (tag) {
+    const tags = [].concat(this.state.tags, tag)
+    this.setState({ tags })
+  }
+
 
   passengersQuantity = (event) => {
     const adults = +this.state.adultsQuantity;
@@ -26,7 +62,8 @@ class MainSearch extends Component {
       switch (event.target.id) {
         case 'adultsIncrease':
           if (adults < 20) {
-          this.setState({adultsQuantity: adults + 1});
+          // this.setState({adultsQuantity: adults + 1});
+          console.log(this.state.suggestions);
           };
           break;
         case 'adultsDecrease':
@@ -92,7 +129,13 @@ class MainSearch extends Component {
               <p className="mainsearch__info">Ви можете здійснити пошук за декількома напрямками одночасно</p>
               <label className="mainsearch__input">
                 <Icon name="icon-search" width="1em" height="1em"/>
-                <input type="text" placeholder="Країна, місто, регіон, готель"/>
+                <ReactTags
+                  ref={this.reactTags}
+                  tags={this.state.tags}
+                  placeholderText="Country, city. In english"
+                  suggestions={this.state.suggestions}
+                  onDelete={this.onDelete.bind(this)}
+                  onAddition={this.onAddition.bind(this)} />
               </label>
               {extendedSearchActive ?
                   <Row className="mainsearch__extendedSearch">
