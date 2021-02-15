@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Touristo/static/css/main.b6158a05.chunk.css",
-    "main.js": "/Touristo/static/js/main.2704e826.chunk.js",
-    "main.js.map": "/Touristo/static/js/main.2704e826.chunk.js.map",
-    "runtime-main.js": "/Touristo/static/js/runtime-main.8ebadc42.js",
-    "runtime-main.js.map": "/Touristo/static/js/runtime-main.8ebadc42.js.map",
+    "main.css": "/Touristo/static/css/main.cb64c0ce.chunk.css",
+    "main.js": "/Touristo/static/js/main.c9c7fda9.chunk.js",
+    "main.js.map": "/Touristo/static/js/main.c9c7fda9.chunk.js.map",
+    "runtime-main.js": "/Touristo/static/js/runtime-main.85dbdfaf.js",
+    "runtime-main.js.map": "/Touristo/static/js/runtime-main.85dbdfaf.js.map",
     "static/css/2.2d8e290c.chunk.css": "/Touristo/static/css/2.2d8e290c.chunk.css",
-    "static/js/2.1465890d.chunk.js": "/Touristo/static/js/2.1465890d.chunk.js",
-    "static/js/2.1465890d.chunk.js.map": "/Touristo/static/js/2.1465890d.chunk.js.map",
-    "static/js/3.89018cb1.chunk.js": "/Touristo/static/js/3.89018cb1.chunk.js",
-    "static/js/3.89018cb1.chunk.js.map": "/Touristo/static/js/3.89018cb1.chunk.js.map",
+    "static/js/2.44b59582.chunk.js": "/Touristo/static/js/2.44b59582.chunk.js",
+    "static/js/2.44b59582.chunk.js.map": "/Touristo/static/js/2.44b59582.chunk.js.map",
+    "static/js/3.7eafa16b.chunk.js": "/Touristo/static/js/3.7eafa16b.chunk.js",
+    "static/js/3.7eafa16b.chunk.js.map": "/Touristo/static/js/3.7eafa16b.chunk.js.map",
     "index.html": "/Touristo/index.html",
     "static/css/2.2d8e290c.chunk.css.map": "/Touristo/static/css/2.2d8e290c.chunk.css.map",
-    "static/css/main.b6158a05.chunk.css.map": "/Touristo/static/css/main.b6158a05.chunk.css.map",
-    "static/js/2.1465890d.chunk.js.LICENSE.txt": "/Touristo/static/js/2.1465890d.chunk.js.LICENSE.txt",
+    "static/css/main.cb64c0ce.chunk.css.map": "/Touristo/static/css/main.cb64c0ce.chunk.css.map",
+    "static/js/2.44b59582.chunk.js.LICENSE.txt": "/Touristo/static/js/2.44b59582.chunk.js.LICENSE.txt",
     "static/media/firstProposition.4ff50f3f.png": "/Touristo/static/media/firstProposition.4ff50f3f.png",
     "static/media/App.scss": "/Touristo/static/media/slick.c94f7671.ttf",
     "static/media/rudolph.6b06595d.gif": "/Touristo/static/media/rudolph.6b06595d.gif",
@@ -28,10 +28,10 @@
     "static/media/tourCover8.7ba4e13e.png": "/Touristo/static/media/tourCover8.7ba4e13e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ebadc42.js",
+    "static/js/runtime-main.85dbdfaf.js",
     "static/css/2.2d8e290c.chunk.css",
-    "static/js/2.1465890d.chunk.js",
-    "static/css/main.b6158a05.chunk.css",
-    "static/js/main.2704e826.chunk.js"
+    "static/js/2.44b59582.chunk.js",
+    "static/css/main.cb64c0ce.chunk.css",
+    "static/js/main.c9c7fda9.chunk.js"
   ]
 }
